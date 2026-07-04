@@ -1,0 +1,1 @@
+yafu-x64 "factor(@)" -batchfile n.txt

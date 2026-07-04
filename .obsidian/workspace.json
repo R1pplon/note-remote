@@ -1,0 +1,225 @@
+{
+  "main": {
+    "id": "95f57f009444a6f7",
+    "type": "split",
+    "children": [
+      {
+        "id": "91a08781e7c91d34",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "529a3d5e1cfe1bd3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "DevOps/docker.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "docker"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ed87f9da82a82635",
+    "type": "split",
+    "children": [
+      {
+        "id": "42ff639476dcad1f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "85d568fa542862f0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "a1676e6eb8d2a1dd",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "github",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "03b7aba6676f63ef",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 291.5
+  },
+  "right": {
+    "id": "480431468f483d61",
+    "type": "split",
+    "children": [
+      {
+        "id": "8513ffa85583cb51",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2aebaef7ca7b62f5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "运维学习/K8s/K8s学习笔记.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "K8s学习笔记 的反向链接列表"
+            }
+          },
+          {
+            "id": "abe40d6eff35f3e2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "使用 SSH 登录 GitHub.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "使用 SSH 登录 GitHub 的出链列表"
+            }
+          },
+          {
+            "id": "a0f49c3e55653621",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "16da200b49617224",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "d97c607692a78f8d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "DevOps/docker.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "docker 的大纲"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "obsidian-git:Open Git source control": false
+    }
+  },
+  "active": "529a3d5e1cfe1bd3",
+  "lastOpenFiles": [
+    "DevOps/使用 SSH 登录 GitHub.md",
+    "DevOps/docker.md",
+    "DevOps/Dockerfile.md",
+    "DevOps/Git.md",
+    "DevOps/GitHub Actions.md",
+    "Windows/在 Microsoft Windows 10 IoT 企业版 LTSC 上安装 WinGet.md",
+    "Linux/WSL/WSL2 操作手册.md",
+    "Linux/Android/Waydroid 安装使用手册.md",
+    "Linux/Android/使用Waydroid作为抓包测试环境.md",
+    "Linux/远程桌面/tigervnc.md",
+    "Linux/远程桌面/Fedora 44 Server 远程 XFCE 桌面完全指南（VNC + SSH）.md",
+    "Linux/系统管理/systemd架构图.md",
+    "Linux/系统管理/systemctl 服务管理速查笔记.md",
+    "Linux/系统管理/SHELL语法速查.md",
+    "Linux/系统管理/Linux 用户与组管理速查笔记.md",
+    "Linux/系统管理/Linux 文件权限速查笔记.md",
+    "Linux/系统管理/Linux 进程监控与管理 速查笔记.md",
+    "Linux/系统管理/终端配置.md",
+    "Linux/系统管理/命令速查.md",
+    "DevOps/K8s/K8s学习笔记.md",
+    "DevOps/K8s/kubeadm安装k8s集群.md",
+    "DevOps/Nginx.md",
+    "ctf/Web/RCE/无参RCE学习笔记.md",
+    "ctf/Web/RCE/RCE.md",
+    "ctf/Web/php伪协议/php中死亡exit绕过.md",
+    "ctf/Web/php伪协议/php伪协议.md",
+    "ctf/Web/php伪协议/php：input输入phpinfo.webp",
+    "ctf/Web/php伪协议/file[文件的相对路径和文件名].webp",
+    "ctf/Web/php伪协议/file[文件的绝对路径和文件名].webp",
+    "ctf/Web/文件上传/文件上传.pdf",
+    "ctf/Web/文件上传/文件上传.png",
+    "ctf/Web/反序列化/php反序列化3.png",
+    "ctf/密码学/RSA/共模攻击1.jpg",
+    "ctf/密码学/RSA/20200508212338597.jpg",
+    "ctf/密码学/RSA/20200508212323659.jpg"
+  ]
+}

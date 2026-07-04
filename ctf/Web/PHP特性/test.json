@@ -1,0 +1,114 @@
+{
+  "d": {
+    "square": {
+      "__PHP_Incomplete_Class_Name": "DerivativeParams",
+      "last_mod_time": 1762931528,
+      "sizing": {
+        "__PHP_Incomplete_Class_Name": "SizingParams",
+        "ideal_size": [120, 120],
+        "max_crop": 1,
+        "min_size": [120, 120]
+      },
+      "sharpen": 0
+    },
+    "thumb": {
+      "__PHP_Incomplete_Class_Name": "DerivativeParams",
+      "last_mod_time": 1762931528,
+      "sizing": {
+        "__PHP_Incomplete_Class_Name": "SizingParams",
+        "ideal_size": [144, 144],
+        "max_crop": 0,
+        "min_size": null
+      },
+      "sharpen": 0
+    },
+    "2small": {
+      "__PHP_Incomplete_Class_Name": "DerivativeParams",
+      "last_mod_time": 1762931528,
+      "sizing": {
+        "__PHP_Incomplete_Class_Name": "SizingParams",
+        "ideal_size": [240, 240],
+        "max_crop": 0,
+        "min_size": null
+      },
+      "sharpen": 0
+    },
+    "xsmall": {
+      "__PHP_Incomplete_Class_Name": "DerivativeParams",
+      "last_mod_time": 1762931528,
+      "sizing": {
+        "__PHP_Incomplete_Class_Name": "SizingParams",
+        "ideal_size": [432, 324],
+        "max_crop": 0,
+        "min_size": null
+      },
+      "sharpen": 0
+    },
+    "small": {
+      "__PHP_Incomplete_Class_Name": "DerivativeParams",
+      "last_mod_time": 1762931528,
+      "sizing": {
+        "__PHP_Incomplete_Class_Name": "SizingParams",
+        "ideal_size": [576, 432],
+        "max_crop": 0,
+        "min_size": null
+      },
+      "sharpen": 0
+    },
+    "medium": {
+      "__PHP_Incomplete_Class_Name": "DerivativeParams",
+      "last_mod_time": 1762931528,
+      "sizing": {
+        "__PHP_Incomplete_Class_Name": "SizingParams",
+        "ideal_size": [792, 594],
+        "max_crop": 0,
+        "min_size": null
+      },
+      "sharpen": 0
+    },
+    "large": {
+      "__PHP_Incomplete_Class_Name": "DerivativeParams",
+      "last_mod_time": 1762931528,
+      "sizing": {
+        "__PHP_Incomplete_Class_Name": "SizingParams",
+        "ideal_size": [1008, 756],
+        "max_crop": 0,
+        "min_size": null
+      },
+      "sharpen": 0
+    },
+    "xlarge": {
+      "__PHP_Incomplete_Class_Name": "DerivativeParams",
+      "last_mod_time": 1762931528,
+      "sizing": {
+        "__PHP_Incomplete_Class_Name": "SizingParams",
+        "ideal_size": [1224, 918],
+        "max_crop": 0,
+        "min_size": null
+      },
+      "sharpen": 0
+    },
+    "xxlarge": {
+      "__PHP_Incomplete_Class_Name": "DerivativeParams",
+      "last_mod_time": 1762931528,
+      "sizing": {
+        "__PHP_Incomplete_Class_Name": "SizingParams",
+        "ideal_size": [1656, 1242],
+        "max_crop": 0,
+        "min_size": null
+      },
+      "sharpen": 0
+    }
+  },
+  "q": 95,
+  "w": {
+    "__PHP_Incomplete_Class_Name": "WatermarkParams",
+    "file": "",
+    "min_size": [500, 500],
+    "xpos": 50,
+    "ypos": 50,
+    "xrepeat": 0,
+    "opacity": 100
+  },
+  "c": []
+}

