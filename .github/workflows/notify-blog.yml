@@ -2,6 +2,9 @@ name: Notify Blog
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - '.obsidian/**'
+      - '.github/**'
 jobs:
   notify:
     runs-on: ubuntu-latest
