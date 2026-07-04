@@ -1,3 +1,8 @@
+---
+title: GitHub Actions
+date: 2026-07-04
+---
+
 工作流配置文件路径：`.github/workflows/*.yaml`
 即在项目的 `.github/workflows/` 路径下的所有yaml文件
 

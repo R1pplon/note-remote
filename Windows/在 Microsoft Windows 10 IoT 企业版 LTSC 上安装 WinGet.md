@@ -1,3 +1,7 @@
+---
+title: "在 Microsoft Windows 10 IoT 企业版 LTSC 上安装 WinGet"
+date: 2026-06-23
+---
 系统信息
 
 > Microsoft Windows 10 IoT 企业版 LTSC

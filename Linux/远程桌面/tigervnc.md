@@ -1,3 +1,7 @@
+---
+title: "tigervnc"
+date: 2026-07-02
+---
 /usr/share/doc/tigervnc/HOWTO.md
 # 变更内容
 此前版本的 TigerVNC 有一个名为 `vncserver` 的包装脚本，用户可以手动运行它以启动 *Xvnc* 进程。使用方法非常简单，只需执行：

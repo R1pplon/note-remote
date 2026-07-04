@@ -1,3 +1,7 @@
+---
+title: "WSL2 操作手册"
+date: 2026-06-22
+---
 [Windows Subsystem for Linux 文档 | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/)
 
 ## 安装

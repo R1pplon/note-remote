@@ -1,3 +1,7 @@
+---
+title: "Fedora 44 Server 远程 XFCE 桌面完全指南（VNC + SSH）"
+date: 2026-07-02
+---
 > **核心思路**：服务器保持纯命令行模式（`multi-user.target`）运行以节省资源，仅在需要图形界面时，通过 systemd 启动 VNC 虚拟屏幕，并通过 SSH 隧道加密访问。
 
 

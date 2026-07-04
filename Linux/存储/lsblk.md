@@ -1,3 +1,7 @@
+---
+title: "lsblk"
+date: 2026-07-02
+---
 针对`lsblk`（list block devices）命令，这里为你总结一个面向实操的精简指南。
 
 ### 核心用法

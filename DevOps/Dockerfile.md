@@ -1,3 +1,7 @@
+---
+title: "Dockerfile"
+date: 2026-07-02
+---
 ## 一、基础与构建指令
 ### FROM
 - **格式**：`FROM <image>[:<tag>]`

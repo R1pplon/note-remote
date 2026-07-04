@@ -1,3 +1,7 @@
+---
+title: "kubeadm安装k8s集群"
+date: 2026-06-27
+---
 操作系统: Rockylinux 10
 Docker: 20+
 K8s: 1.23.6
