@@ -1,0 +1,13 @@
+name: Notify Blog
+on:
+  push:
+    branches: [main]
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.BLOG_REPO_TOKEN }}
+          repository: R1pplon/blog
+          event-type: note-updated
