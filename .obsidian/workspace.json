@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "91a08781e7c91d34",
+        "id": "40296c6192a04e45",
         "type": "tabs",
         "children": [
           {
-            "id": "529a3d5e1cfe1bd3",
+            "id": "3b7ba80858d18d24",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "DevOps/Git.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "Git"
             }
           }
         ]
@@ -152,12 +156,23 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "DevOps/Git.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "Git 的大纲"
+            }
+          },
+          {
+            "id": "f88d84e269caf3df",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
         ],
@@ -165,7 +180,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 392.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -179,8 +194,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "529a3d5e1cfe1bd3",
+  "active": "3b7ba80858d18d24",
   "lastOpenFiles": [
+    "DevOps/GitHub Actions.md",
     "网络安全/信息收集/备份文件下载/网站源码备份文件扫描.py",
     "网络安全/信息收集/备份文件下载/网站源码.md",
     "网络安全/信息收集/备份文件下载/svn_hg泄露.md",
@@ -216,7 +232,6 @@
     "网络安全/RCE/无参RCE_fuzz/payload_20250915_223659.txt",
     "网络安全/RCE/无参RCE_fuzz/RCE.php",
     "网络安全/RCE/无参RCE_fuzz/payload_20250914_183306.txt",
-    "网络安全/RCE/无参RCE_fuzz/payload_20250914_183248.txt",
     "网络安全/SQL注入/image/sql_union_1.png",
     "网络安全/SQL注入/image/sql_union_2.png",
     "网络安全/SQL注入/image/sql_string_3.png",
