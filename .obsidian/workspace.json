@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DevOps/Git.md",
+                "file": "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/0-你的第一个 Kubernetes 实验/0-介绍.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Git"
+              "title": "0-介绍"
             }
           }
         ]
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DevOps/Git.md",
+                "file": "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/0-你的第一个 Kubernetes 实验/0-介绍.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Git 的大纲"
+              "title": "0-介绍 的大纲"
             }
           },
           {
@@ -176,7 +176,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -194,44 +194,44 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "3b7ba80858d18d24",
+  "active": "f88d84e269caf3df",
   "lastOpenFiles": [
-    "DevOps/GitHub Actions.md",
-    "网络安全/信息收集/备份文件下载/网站源码备份文件扫描.py",
-    "网络安全/信息收集/备份文件下载/网站源码.md",
-    "网络安全/信息收集/备份文件下载/svn_hg泄露.md",
-    "网络安全/Writeup/moectf/罗小黑战记.md",
-    "网络安全/Writeup/moectf/电院_Backend.md",
-    "网络安全/Writeup/moectf/新建文本文档 (4).php",
-    "网络安全/Writeup/moectf/现代密码学入门指北.md",
-    "网络安全/Writeup/moectf/弗拉格之地的入口.md",
-    "网络安全/Writeup/moectf/垫刀之路07_泄漏的密码.md",
-    "网络安全/Writeup/moectf/垫刀之路06_pop base mini moe.md",
-    "网络安全/Writeup/moectf/垫刀之路04_一个文件浏览器.md",
-    "网络安全/Writeup/moectf/垫刀之路05_登陆网站.md",
-    "网络安全/Writeup/moectf/二进制漏洞审计入门指北.md",
-    "网络安全/Writeup/moectf/垫刀之路03_这是一个图床.md",
-    "网络安全/Writeup/moectf/test.php",
-    "网络安全/Writeup/moectf/ProveYourLove.md",
-    "网络安全/Writeup/moectf/Signin.md",
-    "网络安全/Writeup/moectf/pop moe.md",
-    "网络安全/Writeup/moectf/NotEnoughTime.md",
-    "网络安全/Writeup/moectf/moectf2024 Crypto wp.md",
-    "网络安全/Writeup/moectf/Find It.md",
-    "网络安全/Writeup/moectf/ez_usbpcap.md",
-    "网络安全/Writeup/moectf/ez_http.md",
-    "网络安全/Writeup/moectf/ez_hash.md",
-    "网络安全/Writeup/moectf/ez_Forensics.md",
-    "网络安全/Writeup/moectf/Big and small.md",
-    "网络安全/Writeup/ctfshow/信息搜集(web1-20).md",
-    "网络安全/Writeup/ctfshow/反序列化 全部.md",
-    "网络安全/RCE/无参RCE_fuzz/过滤条件.txt",
-    "网络安全/RCE/无参RCE_fuzz/无参RCE_payload.txt",
-    "网络安全/RCE/无参RCE_fuzz/test2.php",
-    "网络安全/RCE/无参RCE_fuzz/request.txt",
-    "网络安全/RCE/无参RCE_fuzz/payload_20250915_223659.txt",
-    "网络安全/RCE/无参RCE_fuzz/RCE.php",
-    "网络安全/RCE/无参RCE_fuzz/payload_20250914_183306.txt",
+    "DevOps/Git.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/22-使用 Jobs 和 CronJobs 运行 Pods/5-总结.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/22-使用 Jobs 和 CronJobs 运行 Pods/4-运行 Cronjob.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/22-使用 Jobs 和 CronJobs 运行 Pods/3-运行多 Pod 的 Job.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/22-使用 Jobs 和 CronJobs 运行 Pods/2-使用 Job 运行 Pod.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/22-使用 Jobs 和 CronJobs 运行 Pods/1-启动 Minikube 集群.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/22-使用 Jobs 和 CronJobs 运行 Pods/0-介绍.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/22-使用 Jobs 和 CronJobs 运行 Pods",
+    "DevOps/K8s/K8s学习资料/Kubernetes 基础知识/5-无状态应用部署/3-总结.md",
+    "DevOps/K8s/K8s学习资料/Kubernetes 基础知识/5-无状态应用部署/2-更新与回滚.md",
+    "DevOps/K8s/K8s学习资料/Kubernetes 基础知识/5-无状态应用部署/1-部署与暴露.md",
+    "DevOps/K8s/K8s学习资料/Kubernetes 基础知识/5-无状态应用部署/0-介绍.md",
+    "DevOps/K8s/K8s学习资料/Kubernetes 基础知识/5-无状态应用部署",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/9-保障 Kubernetes Dashboard 访问安全/1-保障 Kubernetes Dashboard 访问安全.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/9-保障 Kubernetes Dashboard 访问安全/2-总结.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/9-保障 Kubernetes Dashboard 访问安全/0-介绍.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/9-保障 Kubernetes Dashboard 访问安全",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/8-Kubernetes Dashboard 管理/5-总结.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/8-Kubernetes Dashboard 管理/3-创建服务账户和角色绑定.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/8-Kubernetes Dashboard 管理/4-访问 Kubernetes Dashboard.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/8-Kubernetes Dashboard 管理/1-启动 Kubernetes 集群.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/8-Kubernetes Dashboard 管理/2-部署 Kubernetes Dashboard.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/8-Kubernetes Dashboard 管理/0-介绍.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/8-Kubernetes Dashboard 管理",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/7-部署 Kubernetes Nginx Pod/1-部署 Nginx Pod.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/7-部署 Kubernetes Nginx Pod/2-总结.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/7-部署 Kubernetes Nginx Pod/0-介绍.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/7-部署 Kubernetes Nginx Pod",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/6-Kubernetes 集群架构/6-总结.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/6-Kubernetes 集群架构/3-创建并检查 Pod.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/6-Kubernetes 集群架构/5-访问应用程序.md",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/6-Kubernetes 集群架构",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/5-探索 Kubernetes 集群版本",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/42-Kubernetes 显示资源使用情况",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/41-Kubernetes 基于角色的访问控制（RBAC）",
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/40-在 Kubernetes 中使用 HorizontalPodAutoscaler",
     "网络安全/SQL注入/image/sql_union_1.png",
     "网络安全/SQL注入/image/sql_union_2.png",
     "网络安全/SQL注入/image/sql_string_3.png",
