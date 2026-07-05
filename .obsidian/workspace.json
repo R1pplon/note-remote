@@ -11,14 +11,10 @@
             "id": "3b7ba80858d18d24",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/0-你的第一个 Kubernetes 实验/0-介绍.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "0-介绍"
+              "title": "新标签页"
             }
           }
         ]
@@ -196,6 +192,7 @@
   },
   "active": "f88d84e269caf3df",
   "lastOpenFiles": [
+    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/0-你的第一个 Kubernetes 实验/0-介绍.md",
     "DevOps/Git.md",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/22-使用 Jobs 和 CronJobs 运行 Pods/5-总结.md",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/22-使用 Jobs 和 CronJobs 运行 Pods/4-运行 Cronjob.md",
@@ -226,7 +223,6 @@
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/7-部署 Kubernetes Nginx Pod",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/6-Kubernetes 集群架构/6-总结.md",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/6-Kubernetes 集群架构/3-创建并检查 Pod.md",
-    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/6-Kubernetes 集群架构/5-访问应用程序.md",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/6-Kubernetes 集群架构",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/5-探索 Kubernetes 集群版本",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/42-Kubernetes 显示资源使用情况",
