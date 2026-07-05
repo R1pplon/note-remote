@@ -1,3 +1,8 @@
+---
+title: "使用 kubectl proxy 访问应用程序"
+date: 2026-06-20
+---
+
 # 使用 kubectl proxy 访问应用程序
 
 在此步骤中，你将学习如何使用 `kubectl proxy` 访问你的 Kubernetes 应用程序。`kubectl proxy` 创建一个到 Kubernetes API 服务器的安全代理连接，允许你从当前环境访问集群服务和 Pod。这对于开发和调试非常有用，特别是当你想要访问未向外部公开的服务时。

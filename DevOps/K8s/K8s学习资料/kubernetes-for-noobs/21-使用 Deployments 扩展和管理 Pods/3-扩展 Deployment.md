@@ -1,3 +1,8 @@
+---
+title: "扩展 Deployment"
+date: 2026-06-20
+---
+
 # 扩展 Deployment
 
 1. 将 `my-deployment` Deployment 扩展到 5 个副本：

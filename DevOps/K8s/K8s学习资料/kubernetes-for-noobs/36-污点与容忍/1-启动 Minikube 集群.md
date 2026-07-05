@@ -1,3 +1,8 @@
+---
+title: "启动 Minikube 集群"
+date: 2026-06-20
+---
+
 # 启动 Minikube 集群
 
 在创建资源之前，你需要一个正在运行的 Kubernetes 集群。Minikube 是一个轻量级的 Kubernetes 环境，可以在你的本地机器上运行。

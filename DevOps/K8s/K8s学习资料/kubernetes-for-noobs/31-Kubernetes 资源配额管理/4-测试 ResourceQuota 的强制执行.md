@@ -1,3 +1,8 @@
+---
+title: "测试 ResourceQuota 的强制执行"
+date: 2026-06-20
+---
+
 # 测试 ResourceQuota 的强制执行
 
 在本步骤中，你将创建一个超出 ResourceQuota 中定义的资源限制的 Pod，并验证 ResourceQuota 是否强制执行这些限制。以下是具体操作步骤：

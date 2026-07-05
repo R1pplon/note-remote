@@ -1,3 +1,8 @@
+---
+title: "创建 Deployment"
+date: 2026-06-20
+---
+
 # 创建 Deployment
 
 在集群运行后，使用 `nginx` 镜像创建一个名为 `hello-world` 的简单 Kubernetes 部署（Deployment）。

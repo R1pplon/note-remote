@@ -1,3 +1,8 @@
+---
+title: "创建 Deployment"
+date: 2026-06-20
+---
+
 # 创建 Deployment
 
 1. 在 `/home/labex/project/` 目录下创建一个名为 `my-deployment.yaml` 的文件，内容如下：

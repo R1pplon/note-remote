@@ -1,3 +1,8 @@
+---
+title: "启动本地 Kubernetes 集群"
+date: 2026-06-20
+---
+
 # 启动本地 Kubernetes 集群
 
 在这一步中，你将使用 Minikube 启动并验证一个本地 Kubernetes 集群。Minikube 提供了一种简单的方式来设置单节点的 Kubernetes 环境，适用于学习和开发。

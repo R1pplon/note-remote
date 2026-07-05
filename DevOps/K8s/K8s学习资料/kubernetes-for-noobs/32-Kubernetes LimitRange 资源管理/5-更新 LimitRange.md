@@ -1,3 +1,8 @@
+---
+title: "更新 LimitRange"
+date: 2026-06-20
+---
+
 # 更新 LimitRange
 
 在这一步骤中，你将更新在 `步骤：创建一个简单的 LimitRange` 中创建的 LimitRange，以修改资源限制。以下是具体操作步骤：

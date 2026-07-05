@@ -1,3 +1,8 @@
+---
+title: "更新 Service"
+date: 2026-06-20
+---
+
 # 更新 Service
 
 第四步是更新 Service，使其指向另一组 Pod。将 `/home/labex/project/service.yaml` 文件中的 `selector` 字段更新为以下内容：

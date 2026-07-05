@@ -1,3 +1,8 @@
+---
+title: "创建 HorizontalPodAutoscaler"
+date: 2026-06-20
+---
+
 # 创建 HorizontalPodAutoscaler
 
 现在我们已经有了一个 Deployment，接下来可以创建一个 HorizontalPodAutoscaler 来自动扩展该 Deployment。

@@ -1,3 +1,8 @@
+---
+title: "探索 kubectl run 命令"
+date: 2026-06-20
+---
+
 # 探索 kubectl run 命令
 
 `kubectl run` 命令用于在 Pod 中创建并运行特定的镜像。它提供了多种选项来定制 Pod 的行为、环境和规格。

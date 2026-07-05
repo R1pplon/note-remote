@@ -1,3 +1,8 @@
+---
+title: "更新 Deployment"
+date: 2026-06-20
+---
+
 # 更新 Deployment
 
 1. 编辑 `my-deployment` Deployment 以使用 `nginx:1.19` 镜像：

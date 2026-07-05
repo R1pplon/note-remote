@@ -1,3 +1,8 @@
+---
+title: "将 ConfigMap 挂载为文件"
+date: 2026-06-20
+---
+
 # 将 ConfigMap 挂载为文件
 
 现在，让我们教导 Pod 如何读取公告板。

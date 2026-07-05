@@ -1,3 +1,8 @@
+---
+title: "创建 ResourceQuota"
+date: 2026-06-20
+---
+
 # 创建 ResourceQuota
 
 在本步骤中，你将创建一个简单的 ResourceQuota，用于限制命名空间中可以使用的 CPU 和内存量。以下是具体操作步骤：

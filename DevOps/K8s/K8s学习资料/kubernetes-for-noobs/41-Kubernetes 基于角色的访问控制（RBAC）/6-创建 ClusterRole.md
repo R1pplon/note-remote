@@ -1,3 +1,8 @@
+---
+title: "创建 ClusterRole"
+date: 2026-06-20
+---
+
 # 创建 ClusterRole
 
 创建一个名为 `myapp-admin` 的 ClusterRole，允许用户在所有命名空间中创建、删除和更新 Pod 和 Service。使用以下名为 `myapp-admin-clusterrole.yaml` 的 YAML 文件：

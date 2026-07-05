@@ -1,3 +1,8 @@
+---
+title: "修改 PVC 存储资源"
+date: 2026-06-20
+---
+
 # 修改 PVC 存储资源
 
 在此步骤中，你将修改 PVC 以从 PersistentVolume 请求特定的存储资源。你将修改 `pvc.yaml` 文件，将存储请求从 500Mi 改为 1Gi。

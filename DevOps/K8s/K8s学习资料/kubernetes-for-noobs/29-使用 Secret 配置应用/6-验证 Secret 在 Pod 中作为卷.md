@@ -1,3 +1,8 @@
+---
+title: "验证 Secret 在 Pod 中作为卷"
+date: 2026-06-20
+---
+
 # 验证 Secret 在 Pod 中作为卷
 
 在这一步，你将验证你的应用程序是否已使用来自 `my-secret` Secret 的数据库密码正确配置。

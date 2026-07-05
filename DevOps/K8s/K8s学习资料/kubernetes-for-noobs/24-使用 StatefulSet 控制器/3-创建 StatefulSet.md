@@ -1,3 +1,8 @@
+---
+title: "创建 StatefulSet"
+date: 2026-06-20
+---
+
 # 创建 StatefulSet
 
 创建一个名为 `statefulset.yaml` 的文件，内容如下：

@@ -1,3 +1,8 @@
+---
+title: "探索 kubectl describe 命令"
+date: 2026-06-20
+---
+
 # 探索 kubectl describe 命令
 
 `kubectl describe` 命令用于显示特定资源或资源组的详细信息。它提供了资源的配置、状态和相关事件的深入信息。

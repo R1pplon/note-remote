@@ -1,3 +1,8 @@
+---
+title: "描述一个 Service"
+date: 2026-06-20
+---
+
 # 描述一个 Service
 
 在本步骤中，你将学习如何使用 `describe` 命令查看 Kubernetes Service 的信息。

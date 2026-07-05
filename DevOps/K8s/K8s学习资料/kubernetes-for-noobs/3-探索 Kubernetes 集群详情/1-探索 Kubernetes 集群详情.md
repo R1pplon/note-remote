@@ -1,3 +1,8 @@
+---
+title: "探索 Kubernetes 集群详情"
+date: 2026-06-20
+---
+
 # 探索 Kubernetes 集群详情
 
 作为 TechCorp 的新入职云计算基础设施实习生，你需要对 Kubernetes 集群进行全面的健康检查，以确保其能够正常承载即将开始的部署工作。

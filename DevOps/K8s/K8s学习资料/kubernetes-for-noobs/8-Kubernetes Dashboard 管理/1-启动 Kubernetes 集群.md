@@ -1,3 +1,8 @@
+---
+title: "启动 Kubernetes 集群"
+date: 2026-06-20
+---
+
 # 启动 Kubernetes 集群
 
 在部署 Kubernetes Dashboard 之前，请确保你的集群正在运行。本实验将使用 **Minikube**。

@@ -1,3 +1,8 @@
+---
+title: "测试 HorizontalPodAutoscaler"
+date: 2026-06-20
+---
+
 # 测试 HorizontalPodAutoscaler
 
 现在我们已经创建了 HorizontalPodAutoscaler，可以通过在 Deployment 上生成负载来测试它。

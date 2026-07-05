@@ -1,3 +1,8 @@
+---
+title: "修复 CrashLoop"
+date: 2026-06-20
+---
+
 # 修复 CrashLoop
 
 监控系统报告 `rescue-mission` 命名空间中的 `backend` Pod 处于 `CrashLoopBackOff` 状态。这通常意味着容器内的应用程序无法启动或立即退出。

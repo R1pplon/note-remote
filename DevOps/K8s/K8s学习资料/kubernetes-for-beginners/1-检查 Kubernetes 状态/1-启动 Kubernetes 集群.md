@@ -1,3 +1,8 @@
+---
+title: "启动 Kubernetes 集群"
+date: 2026-06-20
+---
+
 # 启动 Kubernetes 集群
 
 在这个挑战中，你将使用必要的 `kubectl` 命令来验证本地 Kubernetes 集群的状态，以确保它正在正确运行并可供使用。

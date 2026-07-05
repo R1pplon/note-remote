@@ -1,3 +1,8 @@
+---
+title: "启动 Kubernetes 集群"
+date: 2026-06-20
+---
+
 # 启动 Kubernetes 集群
 
 在运行任何 Kubernetes 命令之前，你需要一个正在运行的集群。在本实验中，我们将使用 Minikube 来设置一个本地 Kubernetes 集群。

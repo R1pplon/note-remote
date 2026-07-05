@@ -1,3 +1,8 @@
+---
+title: "检查集群事件（kubectl get events）以获取线索和时间线"
+date: 2026-06-20
+---
+
 # 检查集群事件（kubectl get events）以获取线索和时间线
 
 在这一步中，你将学习如何使用 `kubectl get events` 来调查集群范围内的事件，了解系统活动，并诊断 Kubernetes 环境中的问题。

@@ -1,3 +1,8 @@
+---
+title: "为 Deployment 分配节点选择器"
+date: 2026-06-20
+---
+
 # 为 Deployment 分配节点选择器
 
 在这一步中，我们将为在第一步中创建的 Deployment 分配一个节点选择器（Node Selector）。

@@ -1,3 +1,8 @@
+---
+title: "创建 ClusterRole Binding"
+date: 2026-06-20
+---
+
 # 创建 ClusterRole Binding
 
 创建一个 ClusterRole Binding，将 `myapp-admin` ClusterRole 绑定到集群中的用户或组。例如，将 `myapp-admin` ClusterRole 绑定到 `cluster-admin` 用户，创建以下名为 `myapp-admin-binding.yaml` 的 YAML 文件：

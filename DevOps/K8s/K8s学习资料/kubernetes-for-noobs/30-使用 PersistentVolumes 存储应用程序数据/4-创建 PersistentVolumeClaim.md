@@ -1,3 +1,8 @@
+---
+title: "创建 PersistentVolumeClaim"
+date: 2026-06-20
+---
+
 # 创建 PersistentVolumeClaim
 
 在此步骤中，你将创建一个 PersistentVolumeClaim (PVC)，用于从你在步骤 1 中创建的 PersistentVolume 请求存储空间。创建一个名为 `pvc.yaml` 的 YAML 文件，内容如下：

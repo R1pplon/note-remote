@@ -1,3 +1,8 @@
+---
+title: "在 Deployment YAML 中调整滚动更新策略"
+date: 2026-06-20
+---
+
 # 在 Deployment YAML 中调整滚动更新策略
 
 在这一步中，你将学习如何自定义 Kubernetes Deployment 中的滚动更新策略，以控制应用程序的更新和扩展方式。

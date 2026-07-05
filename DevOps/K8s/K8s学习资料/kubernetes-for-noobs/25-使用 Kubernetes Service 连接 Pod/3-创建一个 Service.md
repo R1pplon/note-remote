@@ -1,3 +1,8 @@
+---
+title: "创建一个 Service"
+date: 2026-06-20
+---
+
 # 创建一个 Service
 
 第二步是创建一个 Service，该 Service 将指向你在上一步中创建的 Pod。创建一个名为 `/home/labex/project/service.yaml` 的文件，内容如下：

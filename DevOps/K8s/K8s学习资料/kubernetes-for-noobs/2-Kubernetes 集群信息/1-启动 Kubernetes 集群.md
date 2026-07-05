@@ -1,3 +1,8 @@
+---
+title: "启动 Kubernetes 集群"
+date: 2026-06-20
+---
+
 # 启动 Kubernetes 集群
 
 Kubernetes 集群需要一个运行环境。在本实验中，我们将使用 **Minikube**，这是一个允许你在本地运行 Kubernetes 集群的工具。请按照以下步骤操作：

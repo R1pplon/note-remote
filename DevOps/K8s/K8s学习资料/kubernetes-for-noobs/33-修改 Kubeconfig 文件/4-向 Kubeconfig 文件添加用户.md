@@ -1,3 +1,8 @@
+---
+title: "向 Kubeconfig 文件添加用户"
+date: 2026-06-20
+---
+
 # 向 Kubeconfig 文件添加用户
 
 要向 kubeconfig 文件添加用户，请使用 `kubectl config set-credentials` 命令。此命令需要用户名称、用户的客户端证书和用户的客户端密钥。以下是一个示例：

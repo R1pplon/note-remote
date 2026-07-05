@@ -1,3 +1,8 @@
+---
+title: "创建包含持久卷（Persistent Volume）的 Pod"
+date: 2026-06-20
+---
+
 # 创建包含持久卷（Persistent Volume）的 Pod
 
 第五步是创建一个包含持久卷（Persistent Volume, PV）和持久卷声明（Persistent Volume Claim, PVC）的 Pod。PV 和 PVC 用于在 Pod 重启时持久存储和访问数据。

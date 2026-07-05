@@ -1,3 +1,8 @@
+---
+title: "使用 ConfigMaps 创建 Pod"
+date: 2026-06-20
+---
+
 # 使用 ConfigMaps 创建 Pod
 
 第四步是使用 ConfigMaps 创建一个 Pod。ConfigMap 是一种 Kubernetes 资源，它允许你将配置数据（如环境变量、配置文件）与应用程序代码分开存储。这种分离方式使得在不重新构建容器的情况下更改配置变得更加容易。

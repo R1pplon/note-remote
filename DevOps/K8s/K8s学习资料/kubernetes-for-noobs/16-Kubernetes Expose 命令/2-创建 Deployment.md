@@ -1,3 +1,8 @@
+---
+title: "创建 Deployment"
+date: 2026-06-20
+---
+
 # 创建 Deployment
 
 在 Kubernetes 中，Deployment 是一种资源对象，用于确保你的应用程序始终运行所需数量的副本。Deployment 管理 Pod 并帮助维护它们在集群中的状态。在此步骤中，你将创建一个运行 Nginx Web 服务器的 Deployment。

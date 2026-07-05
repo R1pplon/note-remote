@@ -1,3 +1,8 @@
+---
+title: "探索 kubectl port-forward 命令"
+date: 2026-06-20
+---
+
 # 探索 kubectl port-forward 命令
 
 `kubectl port-forward` 命令允许你将一个或多个本地端口转发到 Kubernetes 集群中的 Pod、Deployment 或 Service。它通常用于在不对外暴露服务的情况下进行测试和调试。

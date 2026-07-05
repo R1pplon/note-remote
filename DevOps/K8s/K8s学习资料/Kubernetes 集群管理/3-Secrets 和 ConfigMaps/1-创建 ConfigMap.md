@@ -1,3 +1,8 @@
+---
+title: "创建 ConfigMap"
+date: 2026-06-20
+---
+
 # 创建 ConfigMap
 
 让我们为 Web 服务器创建一个配置文件。我们不会将其打包进镜像，而是将其存储在 **ConfigMap** 中。

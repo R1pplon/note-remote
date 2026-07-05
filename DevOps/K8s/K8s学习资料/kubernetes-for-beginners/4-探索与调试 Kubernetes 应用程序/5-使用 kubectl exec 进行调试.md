@@ -1,3 +1,8 @@
+---
+title: "使用 kubectl exec 进行调试"
+date: 2026-06-20
+---
+
 # 使用 kubectl exec 进行调试
 
 在这一步中，你将学习如何使用 `kubectl exec` 在 Kubernetes Pod 内运行命令，这对于调试和调查容器环境至关重要。

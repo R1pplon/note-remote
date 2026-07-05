@@ -1,3 +1,8 @@
+---
+title: "创建一个 Pod"
+date: 2026-06-20
+---
+
 # 创建一个 Pod
 
 创建一个简单的 Pod，它将作为副本的模板。创建一个名为 `/home/labex/project/myapp-pod.yaml` 的文件，内容如下：

@@ -1,3 +1,8 @@
+---
+title: "探索 kubectl taint 命令"
+date: 2026-06-20
+---
+
 # 探索 kubectl taint 命令
 
 `kubectl taint` 命令用于在 Kubernetes 节点上添加、修改或删除污点（taint）。污点是带有影响效果的键值对，通过限制哪些 Pod 可以调度到特定节点上来影响 Pod 的调度。

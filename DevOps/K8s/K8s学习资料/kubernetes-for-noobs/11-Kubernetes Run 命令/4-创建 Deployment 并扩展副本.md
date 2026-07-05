@@ -1,3 +1,8 @@
+---
+title: "创建 Deployment 并扩展副本"
+date: 2026-06-20
+---
+
 # 创建 Deployment 并扩展副本
 
 **Deployment** 管理一组 Pod 并确保它们按预期运行。它对于扩展和更新应用程序非常有用。

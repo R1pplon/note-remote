@@ -1,3 +1,8 @@
+---
+title: "创建 PV 和 PVC"
+date: 2026-06-20
+---
+
 # 创建 PV 和 PVC
 
 第一步是创建一个带有持久卷（Persistent Volume, PV）和持久卷声明（Persistent Volume Claim, PVC）的 Pod。PV 和 PVC 用于在 Pod 重启时持久化存储和访问数据。

@@ -1,3 +1,8 @@
+---
+title: "检查你的 Deployment"
+date: 2026-06-20
+---
+
 # 检查你的 Deployment
 
 现在我们已经创建了一个 Deployment，让我们仔细看看 Kubernetes 为我们设置了什么。

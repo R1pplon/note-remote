@@ -1,3 +1,8 @@
+---
+title: "暴露 Web 应用程序"
+date: 2026-06-20
+---
+
 # 暴露 Web 应用程序
 
 在这一步骤中，你将使用 Kubernetes Service 将 Web 应用程序暴露给外部。

@@ -1,3 +1,8 @@
+---
+title: "测试就绪探针（Readiness Probe）"
+date: 2026-06-20
+---
+
 # 测试就绪探针（Readiness Probe）
 
 现在我们已经添加了就绪探针，可以测试它是否正常工作。

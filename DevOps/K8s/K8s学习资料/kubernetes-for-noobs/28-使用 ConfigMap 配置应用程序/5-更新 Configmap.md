@@ -1,3 +1,8 @@
+---
+title: "更新 Configmap"
+date: 2026-06-20
+---
+
 # 更新 Configmap
 
 在本步骤中，你将更新 ConfigMap 并观察其对应用程序的影响。

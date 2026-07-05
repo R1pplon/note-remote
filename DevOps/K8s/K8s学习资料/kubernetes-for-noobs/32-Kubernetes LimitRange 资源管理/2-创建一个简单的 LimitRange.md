@@ -1,3 +1,8 @@
+---
+title: "创建一个简单的 LimitRange"
+date: 2026-06-20
+---
+
 # 创建一个简单的 LimitRange
 
 在这一步骤中，你将创建一个简单的 LimitRange，用于设置命名空间中 Pod 的 CPU 和内存资源限制。以下是具体操作步骤：

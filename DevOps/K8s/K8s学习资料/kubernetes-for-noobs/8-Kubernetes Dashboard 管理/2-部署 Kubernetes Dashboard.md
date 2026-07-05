@@ -1,3 +1,8 @@
+---
+title: "部署 Kubernetes Dashboard"
+date: 2026-06-20
+---
+
 # 部署 Kubernetes Dashboard
 
 Kubernetes Dashboard 默认不包含在集群中。使用官方的部署 YAML 文件来部署它。

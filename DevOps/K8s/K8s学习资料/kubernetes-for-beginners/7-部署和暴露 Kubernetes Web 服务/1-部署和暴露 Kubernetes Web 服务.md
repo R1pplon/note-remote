@@ -1,3 +1,8 @@
+---
+title: "部署和暴露 Kubernetes Web 服务"
+date: 2026-06-20
+---
+
 # 部署和暴露 Kubernetes Web 服务
 
 你是一名 DevOps 工程师，任务是使用 Kubernetes 为一个简单的 Web 应用程序搭建微服务架构。你的目标是展示你在部署和配置容器化服务方面的技能。

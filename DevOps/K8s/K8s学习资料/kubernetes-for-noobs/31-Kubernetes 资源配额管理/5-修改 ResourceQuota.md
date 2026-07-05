@@ -1,3 +1,8 @@
+---
+title: "修改 ResourceQuota"
+date: 2026-06-20
+---
+
 # 修改 ResourceQuota
 
 在本步骤中，你将学习如何修改现有的 ResourceQuota 以更新资源限制。以下是具体操作步骤：

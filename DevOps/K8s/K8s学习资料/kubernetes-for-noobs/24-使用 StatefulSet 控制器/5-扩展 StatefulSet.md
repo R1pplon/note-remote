@@ -1,3 +1,8 @@
+---
+title: "扩展 StatefulSet"
+date: 2026-06-20
+---
+
 # 扩展 StatefulSet
 
 在 Kubernetes 中，你可以通过更改 `replicas` 字段来扩展或缩减 StatefulSet。让我们将 `web` StatefulSet 扩展到五个副本。

@@ -1,3 +1,8 @@
+---
+title: "访问 Kubernetes Dashboard"
+date: 2026-06-20
+---
+
 # 访问 Kubernetes Dashboard
 
 现在 Dashboard 已运行且权限已配置，可以通过浏览器访问它。

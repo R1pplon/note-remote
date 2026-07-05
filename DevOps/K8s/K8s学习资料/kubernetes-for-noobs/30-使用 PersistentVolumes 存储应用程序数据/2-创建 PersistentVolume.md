@@ -1,3 +1,8 @@
+---
+title: "创建 PersistentVolume"
+date: 2026-06-20
+---
+
 # 创建 PersistentVolume
 
 在此步骤中，你将创建一个可用于存储数据的 PersistentVolume。创建一个名为 `pv.yaml` 的 YAML 文件，内容如下：

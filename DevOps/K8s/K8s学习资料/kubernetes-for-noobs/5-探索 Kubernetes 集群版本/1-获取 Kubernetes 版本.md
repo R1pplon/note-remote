@@ -1,3 +1,8 @@
+---
+title: "获取 Kubernetes 版本"
+date: 2026-06-20
+---
+
 # 获取 Kubernetes 版本
 
 作为一名初级 DevOps 工程师，你需要核实 Kubernetes 环境的版本详情，以确保系统兼容性并为关键的基础设施升级做准备。

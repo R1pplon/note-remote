@@ -1,3 +1,8 @@
+---
+title: "使用 Kubeconfig 文件中的上下文"
+date: 2026-06-20
+---
+
 # 使用 Kubeconfig 文件中的上下文
 
 要使用 kubeconfig 文件中的上下文，请使用 `kubectl config use-context` 命令。此命令需要指定要使用的上下文名称。以下是一个示例：

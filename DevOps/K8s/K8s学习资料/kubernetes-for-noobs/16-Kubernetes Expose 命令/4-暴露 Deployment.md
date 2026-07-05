@@ -1,3 +1,8 @@
+---
+title: "暴露 Deployment"
+date: 2026-06-20
+---
+
 # 暴露 Deployment
 
 为了使 Deployment 可以从 Kubernetes 集群外部访问，你需要将其暴露为一个服务。Kubernetes 中的服务充当稳定的网络端点，即使底层 Pod 发生变化。

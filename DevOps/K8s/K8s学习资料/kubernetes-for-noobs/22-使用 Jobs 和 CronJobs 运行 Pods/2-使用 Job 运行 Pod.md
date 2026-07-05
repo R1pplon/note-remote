@@ -1,3 +1,8 @@
+---
+title: "使用 Job 运行 Pod"
+date: 2026-06-20
+---
+
 # 使用 Job 运行 Pod
 
 第一步是创建一个运行 Job 的 Pod。在本示例中，我们将创建一个 Pod，运行一个命令以在控制台打印 "Hello, World!"。

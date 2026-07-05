@@ -1,3 +1,8 @@
+---
+title: "在 Deployment YAML 中更新应用程序镜像"
+date: 2026-06-20
+---
+
 # 在 Deployment YAML 中更新应用程序镜像
 
 在这一步中，你将学习如何更新 Kubernetes Deployment 中的容器镜像，模拟真实世界中的应用程序升级场景。

@@ -1,3 +1,8 @@
+---
+title: "测试 Service"
+date: 2026-06-20
+---
+
 # 测试 Service
 
 第三步是通过从另一个 Pod 访问 Service 来测试其功能。创建一个名为 `/home/labex/project/test-pod-1.yaml` 的文件，内容如下：

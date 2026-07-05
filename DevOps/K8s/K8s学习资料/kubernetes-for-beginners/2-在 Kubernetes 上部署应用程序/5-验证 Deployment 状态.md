@@ -1,3 +1,8 @@
+---
+title: "验证 Deployment 状态"
+date: 2026-06-20
+---
+
 # 验证 Deployment 状态
 
 在此步骤中，你将学习如何使用各种 `kubectl` 命令来检查和验证 Kubernetes Deployment 和其他资源的状 态。你将探索收集有关正在运行的应用程序及其在 Kubernetes 集群中健康状况信息的不同方法。

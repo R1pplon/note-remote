@@ -1,3 +1,8 @@
+---
+title: "更新 StatefulSet"
+date: 2026-06-20
+---
+
 # 更新 StatefulSet
 
 在 Kubernetes 中，你可以通过更新 StatefulSet 的模板来更新其 Pod。让我们更新 `statefulset.yaml` 文件，以使用 NGINX 版本 1.20.0。

@@ -1,3 +1,8 @@
+---
+title: "使用 kubectl describe 进行故障排查"
+date: 2026-06-20
+---
+
 # 使用 kubectl describe 进行故障排查
 
 在这一步中，你将学习如何使用 `kubectl describe` 来诊断和排查 Kubernetes 资源问题，提供有关 Pod、Deployment 和集群组件状态的详细信息。

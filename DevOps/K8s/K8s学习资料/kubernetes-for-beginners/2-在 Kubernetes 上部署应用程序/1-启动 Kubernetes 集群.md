@@ -1,3 +1,8 @@
+---
+title: "启动 Kubernetes 集群"
+date: 2026-06-20
+---
+
 # 启动 Kubernetes 集群
 
 在此步骤中，我们将使用 Minikube 启动一个 Kubernetes 集群。Minikube 是一个非常适合开发和学习 Kubernetes 的工具，因为它允许你在虚拟化环境中运行一个单节点 Kubernetes 集群。然后，我们将验证集群是否正常运行并已准备好使用。

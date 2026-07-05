@@ -1,3 +1,8 @@
+---
+title: "启动 Minikube 并验证集群"
+date: 2026-06-20
+---
+
 # 启动 Minikube 并验证集群
 
 在使用 Kubernetes 之前，你需要一个正在运行的集群。Minikube 提供了一个轻量级的本地 Kubernetes 集群。

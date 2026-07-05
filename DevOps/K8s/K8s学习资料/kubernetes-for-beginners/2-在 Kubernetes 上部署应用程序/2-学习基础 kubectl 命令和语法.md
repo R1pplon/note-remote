@@ -1,3 +1,8 @@
+---
+title: "学习基础 kubectl 命令和语法"
+date: 2026-06-20
+---
+
 # 学习基础 kubectl 命令和语法
 
 在此步骤中，你将探索基础的 `kubectl` 命令。`kubectl` 是允许你与 Kubernetes 集群交互的命令行工具。它是管理 Kubernetes 资源的关键。我们将演示如何使用 `kubectl` 来查看资源并理解基本的 Kubernetes 对象管理。

@@ -1,3 +1,8 @@
+---
+title: "安装 Nginx Ingress 控制器"
+date: 2026-06-20
+---
+
 # 安装 Nginx Ingress 控制器
 
 首先，我们需要在集群中安装 `nginx-ingress` 控制器。我们可以通过创建一个 Deployment 和一个 Service 来实现，它们将负责运行 Ingress 控制器。

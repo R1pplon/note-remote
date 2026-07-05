@@ -1,3 +1,8 @@
+---
+title: "添加就绪探针（Readiness Probe）"
+date: 2026-06-20
+---
+
 # 添加就绪探针（Readiness Probe）
 
 下一步是为 nginx 容器添加一个就绪探针（readiness probe）。就绪探针用于确定容器是否准备好接收流量。如果探针失败，Kubernetes 将不会向容器发送流量。

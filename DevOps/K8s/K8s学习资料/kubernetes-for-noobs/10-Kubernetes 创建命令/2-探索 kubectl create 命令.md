@@ -1,3 +1,8 @@
+---
+title: "探索 kubectl create 命令"
+date: 2026-06-20
+---
+
 # 探索 kubectl create 命令
 
 `kubectl create` 命令提供了多个子命令来创建 Kubernetes 资源。它帮助管理诸如命名空间（namespaces）、部署（deployments）、服务（services）、密钥（secrets）和配置映射（ConfigMaps）等资源的创建。

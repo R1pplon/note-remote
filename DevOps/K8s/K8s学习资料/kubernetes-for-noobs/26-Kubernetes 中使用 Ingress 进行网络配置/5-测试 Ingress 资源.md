@@ -1,3 +1,8 @@
+---
+title: "测试 Ingress 资源"
+date: 2026-06-20
+---
+
 # 测试 Ingress 资源
 
 最后，我们可以测试 Ingress 资源，以确保一切正常运行。

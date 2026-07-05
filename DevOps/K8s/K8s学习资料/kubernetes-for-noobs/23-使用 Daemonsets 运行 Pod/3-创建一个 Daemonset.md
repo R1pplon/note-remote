@@ -1,3 +1,8 @@
+---
+title: "创建一个 Daemonset"
+date: 2026-06-20
+---
+
 # 创建一个 Daemonset
 
 创建一个 DaemonSet，以便在集群中的每个节点上运行 `myapp-pod` 的副本。创建一个名为 `/home/labex/project/myapp-daemonset.yaml` 的文件，内容如下：

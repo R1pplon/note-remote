@@ -1,3 +1,8 @@
+---
+title: "创建 Service YAML"
+date: 2026-06-20
+---
+
 # 创建 Service YAML
 
 在这一步中，你将创建一个 **Service** 的配置文件。我们将使用一种称为 **NodePort** 的特定类型。

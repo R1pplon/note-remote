@@ -1,3 +1,8 @@
+---
+title: "启用 Metrics-Server"
+date: 2026-06-20
+---
+
 # 启用 Metrics-Server
 
 Metrics-Server 是 Kubernetes 的一个组件，它从各种 Kubernetes 对象中收集指标，并以可消费的格式提供给其他 Kubernetes 组件。在我们能够显示 Kubernetes 集群中的资源使用情况之前，需要先启用 metrics-server。

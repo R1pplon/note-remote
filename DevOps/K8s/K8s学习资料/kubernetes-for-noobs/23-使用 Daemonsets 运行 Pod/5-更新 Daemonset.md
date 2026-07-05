@@ -1,3 +1,8 @@
+---
+title: "更新 Daemonset"
+date: 2026-06-20
+---
+
 # 更新 Daemonset
 
 更新 DaemonSet 以更改 `myapp-container` 使用的镜像。创建一个名为 `/home/labex/project/myapp-daemonset-update.yaml` 的文件，内容如下：

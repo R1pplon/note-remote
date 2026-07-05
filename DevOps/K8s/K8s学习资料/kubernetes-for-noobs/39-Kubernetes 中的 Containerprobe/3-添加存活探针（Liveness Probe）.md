@@ -1,3 +1,8 @@
+---
+title: "添加存活探针（Liveness Probe）"
+date: 2026-06-20
+---
+
 # 添加存活探针（Liveness Probe）
 
 下一步是为 nginx 容器添加一个存活探针（liveness probe）。存活探针用于确定容器是否存活。如果探针失败，Kubernetes 将重启容器。

@@ -1,3 +1,8 @@
+---
+title: "探索 kubectl expose 命令"
+date: 2026-06-20
+---
+
 # 探索 kubectl expose 命令
 
 `kubectl expose` 命令用于创建一个新的 Kubernetes 服务，以暴露现有的资源，例如 Pod、Deployment 或 Replication Controller。它通过基于提供的资源自动创建服务，简化了网络配置。

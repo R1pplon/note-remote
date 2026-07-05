@@ -1,3 +1,8 @@
+---
+title: "运行 Cronjob"
+date: 2026-06-20
+---
+
 # 运行 Cronjob
 
 除了一次性任务（Job），Kubernetes 还支持 CronJob 以定期运行任务。在本示例中，我们将创建一个每分钟运行一次命令的 CronJob。

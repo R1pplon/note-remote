@@ -1,3 +1,8 @@
+---
+title: "探索 kubectl exec 命令"
+date: 2026-06-20
+---
+
 # 探索 kubectl exec 命令
 
 `kubectl exec` 命令用于直接在 pod 中的容器内执行命令。它在调试和检查容器环境时特别有用。

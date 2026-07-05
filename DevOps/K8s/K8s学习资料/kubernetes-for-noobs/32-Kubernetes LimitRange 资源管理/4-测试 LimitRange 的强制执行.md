@@ -1,3 +1,8 @@
+---
+title: "测试 LimitRange 的强制执行"
+date: 2026-06-20
+---
+
 # 测试 LimitRange 的强制执行
 
 在这一步骤中，你将通过尝试创建一个超出 LimitRange 中定义的资源限制的 Pod 来测试 LimitRange 的强制执行。以下是具体操作步骤：

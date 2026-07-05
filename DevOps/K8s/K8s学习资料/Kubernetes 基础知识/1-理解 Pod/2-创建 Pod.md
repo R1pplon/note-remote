@@ -1,3 +1,8 @@
+---
+title: "创建 Pod"
+date: 2026-06-20
+---
+
 # 创建 Pod
 
 现在你已经有了蓝图（`nginx-pod.yaml`），是时候将其交给施工团队——Kubernetes 了。

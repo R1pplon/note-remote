@@ -1,3 +1,8 @@
+---
+title: "创建 Deployment YAML"
+date: 2026-06-20
+---
+
 # 创建 Deployment YAML
 
 在这一步中，你将为你的管理器编写工作说明书。这是一个 YAML 文件，定义了要运行的镜像以及你想要的副本数量。

@@ -1,3 +1,8 @@
+---
+title: "部署 Nginx Pod"
+date: 2026-06-20
+---
+
 # 部署 Nginx Pod
 
 作为一名初入职场的云工程师，你的任务是展示在本地 Kubernetes 环境中部署基础 Web 服务的能力。这个挑战将测试你使用 Minikube 创建和管理简单 Pod 的技能。

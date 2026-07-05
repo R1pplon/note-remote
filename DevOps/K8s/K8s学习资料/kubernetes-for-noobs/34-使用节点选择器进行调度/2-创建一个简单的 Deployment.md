@@ -1,3 +1,8 @@
+---
+title: "创建一个简单的 Deployment"
+date: 2026-06-20
+---
+
 # 创建一个简单的 Deployment
 
 在这一步中，我们将创建一个包含单个 Pod 的简单 Deployment。

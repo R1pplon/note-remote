@@ -1,3 +1,8 @@
+---
+title: "创建 Secret"
+date: 2026-06-20
+---
+
 # 创建 Secret
 
 在这一步，你将创建一个 Kubernetes Secret，其中包含一个数据库密码。

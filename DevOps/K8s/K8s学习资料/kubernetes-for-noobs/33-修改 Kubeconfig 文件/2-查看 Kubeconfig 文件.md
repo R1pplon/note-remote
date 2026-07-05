@@ -1,3 +1,8 @@
+---
+title: "查看 Kubeconfig 文件"
+date: 2026-06-20
+---
+
 # 查看 Kubeconfig 文件
 
 在修改 kubeconfig 文件之前，我们先查看其内容。使用以下命令查看 kubeconfig 文件的内容：

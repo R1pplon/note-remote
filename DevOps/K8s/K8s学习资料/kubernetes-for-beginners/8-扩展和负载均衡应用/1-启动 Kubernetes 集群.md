@@ -1,3 +1,8 @@
+---
+title: "启动 Kubernetes 集群"
+date: 2026-06-20
+---
+
 # 启动 Kubernetes 集群
 
 在这一步中，你将学习如何使用 Minikube 启动并验证一个本地 Kubernetes 集群。这是在 Kubernetes 环境中部署和管理容器化应用的关键第一步。

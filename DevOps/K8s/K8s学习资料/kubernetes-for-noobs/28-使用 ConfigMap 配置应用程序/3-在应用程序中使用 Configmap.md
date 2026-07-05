@@ -1,3 +1,8 @@
+---
+title: "在应用程序中使用 Configmap"
+date: 2026-06-20
+---
+
 # 在应用程序中使用 Configmap
 
 在本步骤中，你将在应用程序中使用 ConfigMap。

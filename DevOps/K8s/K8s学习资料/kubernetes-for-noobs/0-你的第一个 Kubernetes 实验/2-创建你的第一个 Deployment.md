@@ -1,3 +1,8 @@
+---
+title: "创建你的第一个 Deployment"
+date: 2026-06-20
+---
+
 # 创建你的第一个 Deployment
 
 现在我们的集群已经运行起来了，让我们创建第一个 Kubernetes Deployment。Deployment 是一个 Kubernetes 对象，用于管理一组相同的 Pod。（别担心，我们很快就会解释什么是 Pod！）

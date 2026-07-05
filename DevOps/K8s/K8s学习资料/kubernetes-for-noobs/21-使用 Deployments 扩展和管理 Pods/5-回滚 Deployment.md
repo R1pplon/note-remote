@@ -1,3 +1,8 @@
+---
+title: "回滚 Deployment"
+date: 2026-06-20
+---
+
 # 回滚 Deployment
 
 1. 将 `my-deployment` Deployment 回滚到上一个版本：

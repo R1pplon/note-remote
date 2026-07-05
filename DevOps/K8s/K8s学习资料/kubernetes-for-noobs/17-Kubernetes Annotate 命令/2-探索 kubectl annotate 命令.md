@@ -1,3 +1,8 @@
+---
+title: "探索 kubectl annotate 命令"
+date: 2026-06-20
+---
+
 # 探索 kubectl annotate 命令
 
 `kubectl annotate` 命令用于更新或删除 Kubernetes 资源上的注解（annotations）。注解是存储元数据的键值对，可以包含任意字符串或结构化的 JSON 数据。它们对于工具和扩展存储其数据非常有用。

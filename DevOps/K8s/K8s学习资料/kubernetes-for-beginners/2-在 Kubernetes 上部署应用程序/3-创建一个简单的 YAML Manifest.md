@@ -1,3 +1,8 @@
+---
+title: "创建一个简单的 YAML Manifest"
+date: 2026-06-20
+---
+
 # 创建一个简单的 YAML Manifest
 
 在你创建第一个 YAML manifest 之前，理解你将要使用的关键 Kubernetes 对象非常重要。这些对象是在 Kubernetes 中管理和编排应用程序的构建块。

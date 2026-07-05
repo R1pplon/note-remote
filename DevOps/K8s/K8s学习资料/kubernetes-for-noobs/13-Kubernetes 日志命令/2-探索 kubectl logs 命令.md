@@ -1,3 +1,8 @@
+---
+title: "探索 kubectl logs 命令"
+date: 2026-06-20
+---
+
 # 探索 kubectl logs 命令
 
 `kubectl logs` 命令用于打印 Pod 中容器或指定资源的日志。它支持快照日志、流式传输、过滤以及各种其他选项，以实现高效的日志管理。

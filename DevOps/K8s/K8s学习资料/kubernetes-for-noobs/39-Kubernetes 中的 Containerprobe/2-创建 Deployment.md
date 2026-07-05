@@ -1,3 +1,8 @@
+---
+title: "创建 Deployment"
+date: 2026-06-20
+---
+
 # 创建 Deployment
 
 第一步是在 Kubernetes 中创建一个 Deployment。我们将使用这个 Deployment 来测试 ContainerProbe。

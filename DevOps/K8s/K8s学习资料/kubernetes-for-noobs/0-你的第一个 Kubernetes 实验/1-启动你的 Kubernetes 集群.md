@@ -1,3 +1,8 @@
+---
+title: "启动你的 Kubernetes 集群"
+date: 2026-06-20
+---
+
 # 启动你的 Kubernetes 集群
 
 我们将从使用 Minikube 创建一个本地 Kubernetes 集群开始。Minikube 允许你在计算机上运行一个单节点的 Kubernetes 集群，非常适合学习和开发。

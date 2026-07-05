@@ -1,3 +1,8 @@
+---
+title: "介绍 Ingress 基础并展示一个简单的 Ingress YAML 示例"
+date: 2026-06-20
+---
+
 # 介绍 Ingress 基础并展示一个简单的 Ingress YAML 示例
 
 在这一步中，你将了解 Kubernetes Ingress，它是管理对 Kubernetes 集群中服务的外部访问的强大方式。

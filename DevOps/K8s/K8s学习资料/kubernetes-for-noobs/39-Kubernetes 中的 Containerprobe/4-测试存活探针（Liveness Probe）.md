@@ -1,3 +1,8 @@
+---
+title: "测试存活探针（Liveness Probe）"
+date: 2026-06-20
+---
+
 # 测试存活探针（Liveness Probe）
 
 现在我们已经添加了存活探针，可以测试它是否正常工作。

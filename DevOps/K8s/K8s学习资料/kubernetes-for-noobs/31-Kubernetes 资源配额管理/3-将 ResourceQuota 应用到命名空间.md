@@ -1,3 +1,8 @@
+---
+title: "将 ResourceQuota 应用到命名空间"
+date: 2026-06-20
+---
+
 # 将 ResourceQuota 应用到命名空间
 
 在本步骤中，你将把在「步骤：创建 ResourceQuota」中创建的 ResourceQuota 应用到一个命名空间。以下是具体操作步骤：

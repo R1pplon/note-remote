@@ -1,3 +1,8 @@
+---
+title: "启动 Kubernetes 集群"
+date: 2026-06-20
+---
+
 # 启动 Kubernetes 集群
 
 在与 Kubernetes 资源交互之前，请确保 Kubernetes 集群正在运行。在本实验中，我们将使用 Minikube 来设置一个单节点的 Kubernetes 集群。

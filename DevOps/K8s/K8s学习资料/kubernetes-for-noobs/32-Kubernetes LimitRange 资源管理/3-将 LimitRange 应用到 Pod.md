@@ -1,3 +1,8 @@
+---
+title: "将 LimitRange 应用到 Pod"
+date: 2026-06-20
+---
+
 # 将 LimitRange 应用到 Pod
 
 在这一步骤中，你将创建一个受 `步骤：创建一个简单的 LimitRange` 中创建的 LimitRange 约束的 Pod。以下是具体操作步骤：

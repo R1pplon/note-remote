@@ -1,3 +1,8 @@
+---
+title: "删除 StatefulSet"
+date: 2026-06-20
+---
+
 # 删除 StatefulSet
 
 在 Kubernetes 中，你可以通过运行以下命令删除 StatefulSet：

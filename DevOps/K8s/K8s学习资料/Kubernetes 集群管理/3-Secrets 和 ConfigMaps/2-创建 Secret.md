@@ -1,3 +1,8 @@
+---
+title: "创建 Secret"
+date: 2026-06-20
+---
+
 # 创建 Secret
 
 现在，让我们存储一些敏感信息。**Secret** 的工作方式与 ConfigMap 类似，但 Kubernetes 会对其进行特殊处理（在存储时会对数据进行混淆）。

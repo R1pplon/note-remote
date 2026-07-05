@@ -1,3 +1,8 @@
+---
+title: "创建 Configmap"
+date: 2026-06-20
+---
+
 # 创建 Configmap
 
 在本步骤中，你将创建一个包含应用程序配置数据的 ConfigMap。

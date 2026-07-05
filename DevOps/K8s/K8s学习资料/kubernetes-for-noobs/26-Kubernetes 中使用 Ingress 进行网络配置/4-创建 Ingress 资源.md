@@ -1,3 +1,8 @@
+---
+title: "创建 Ingress 资源"
+date: 2026-06-20
+---
+
 # 创建 Ingress 资源
 
 现在我们已经设置了 Ingress 控制器并运行了一个后端服务，接下来可以为 Ingress 资源创建规则。
