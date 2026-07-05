@@ -1,3 +1,8 @@
+---
+title: "部署 Nginx Pod"
+date: 2026-06-20
+---
+
 # 部署 Nginx Pod
 
 作为一名新入职的 DevOps 工程师，你被指派部署一个运行最新版本 Nginx Web 服务器的 Kubernetes Pod。你的目标是确保该 Pod 处于运行状态，并能通过服务正常访问。

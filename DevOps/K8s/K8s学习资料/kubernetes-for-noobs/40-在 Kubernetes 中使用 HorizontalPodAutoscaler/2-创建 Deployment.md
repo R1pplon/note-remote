@@ -1,3 +1,8 @@
+---
+title: "创建 Deployment"
+date: 2026-06-20
+---
+
 # 创建 Deployment
 
 首先，我们需要创建一个 Deployment，以便对其应用 HorizontalPodAutoscaler。

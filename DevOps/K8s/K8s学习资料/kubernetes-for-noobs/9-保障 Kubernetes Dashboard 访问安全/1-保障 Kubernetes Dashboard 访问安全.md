@@ -1,3 +1,8 @@
+---
+title: "保障 Kubernetes Dashboard 访问安全"
+date: 2026-06-20
+---
+
 # 保障 Kubernetes Dashboard 访问安全
 
 作为一名初级 DevOps 工程师，你将通过为 Kubernetes Dashboard 创建一个只读服务账户来增强 Kubernetes 集群的安全性，从而证明你对基于角色的访问控制（RBAC）的掌握。

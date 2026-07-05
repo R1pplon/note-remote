@@ -1,3 +1,8 @@
+---
+title: "应用 YAML Manifest"
+date: 2026-06-20
+---
+
 # 应用 YAML Manifest
 
 在此步骤中，你将更详细地探索 `kubectl apply` 命令，并学习应用 Kubernetes manifest 的不同方法。基于上一步的 YAML 文件，我们将演示应用 manifest 的各种技术。
