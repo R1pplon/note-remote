@@ -11,10 +11,14 @@
             "id": "3b7ba80858d18d24",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Linux/编程/编译加速.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "编译加速"
             }
           }
         ]
@@ -192,8 +196,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f88d84e269caf3df",
+  "active": "3b7ba80858d18d24",
   "lastOpenFiles": [
+    "Linux/编程/编译加速.md",
+    "Linux/编程",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/0-你的第一个 Kubernetes 实验/0-介绍.md",
     "DevOps/Git.md",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/22-使用 Jobs 和 CronJobs 运行 Pods/5-总结.md",
@@ -224,12 +230,10 @@
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/7-部署 Kubernetes Nginx Pod/0-介绍.md",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/7-部署 Kubernetes Nginx Pod",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/6-Kubernetes 集群架构/6-总结.md",
-    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/6-Kubernetes 集群架构/3-创建并检查 Pod.md",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/6-Kubernetes 集群架构",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/5-探索 Kubernetes 集群版本",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/42-Kubernetes 显示资源使用情况",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/41-Kubernetes 基于角色的访问控制（RBAC）",
-    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/40-在 Kubernetes 中使用 HorizontalPodAutoscaler",
     "网络安全/SQL注入/image/sql_union_1.png",
     "网络安全/SQL注入/image/sql_union_2.png",
     "网络安全/SQL注入/image/sql_string_3.png",
