@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/装机记录/Ubuntu 24.04.md",
+                "file": "Linux/系统管理/终端配置.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ubuntu 24.04"
+              "title": "终端配置"
             }
           }
         ]
@@ -80,8 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 291.5,
-    "collapsed": true
+    "width": 291.5
   },
   "right": {
     "id": "480431468f483d61",
@@ -200,8 +199,8 @@
   },
   "active": "3b7ba80858d18d24",
   "lastOpenFiles": [
-    "Linux/编程/编译加速.md",
     "Linux/装机记录/Ubuntu 24.04.md",
+    "Linux/编程/编译加速.md",
     "Linux/装机记录/未命名",
     "Linux/装机记录",
     "Linux/编程",
