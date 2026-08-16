@@ -130,3 +130,33 @@ uv generate-shell-completion zsh > ~/.config/zsh/completions/_uv
 uvx --generate-shell-completion zsh > ~/.config/zsh/completions/_uvx
 ```
 
+### docker
+
+[Docker Ce | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/docker-ce/)
+
+```bash
+# 安装依赖
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+
+# 信任 Docker 的 GPG 公钥并添加仓库
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+sudo tee /etc/apt/sources.list.d/docker.sources <<EOF
+Types: deb
+URIs: https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/ubuntu
+Suites: $(. /etc/os-release && echo "$VERSION_CODENAME")
+Components: stable
+Signed-By: /etc/apt/keyrings/docker.gpg
+EOF
+
+# 安装
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# 将用户添加到Docker组
+sudo usermod -aG docker <username>
+newgrp docker
+```
+
