@@ -158,5 +158,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 # 将用户添加到Docker组
 sudo usermod -aG docker <username>
 newgrp docker
+
+# 配置命令补全
+docker completion zsh > ~/.config/zsh/completions/_docker
 ```
 
