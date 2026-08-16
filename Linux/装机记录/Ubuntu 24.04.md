@@ -19,20 +19,49 @@ sudo mv /etc/apt/sources.list.d/ubuntu.sources /etc/apt/sources.list.d/ubuntu.so
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
 ```
 
-写入 DEB822 格式的中科大软件源
+在 `/etc/apt/sources.list.d/ubuntu.sources`
+写入 DEB822 格式的清华软件源
 
 ```
 Types: deb
-URIs: https://mirrors.ustc.edu.cn/ubuntu
-Suites: noble noble-updates noble-backports
+URIs: https://mirrors.tuna.tsinghua.edu.cn/ubuntu
+Suites: resolute resolute-updates resolute-backports
 Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+# Types: deb-src
+# URIs: https://mirrors.tuna.tsinghua.edu.cn/ubuntu
+# Suites: resolute resolute-updates resolute-backports
+# Components: main restricted universe multiverse
+# Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+# 以下安全更新软件源为官方源配置
 Types: deb
-URIs: https://mirrors.ustc.edu.cn/ubuntu
-Suites: noble-security
+URIs: http://security.ubuntu.com/ubuntu/
+Suites: resolute-security
 Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+# Types: deb-src
+# URIs: http://security.ubuntu.com/ubuntu/
+# Suites: resolute-security
+# Components: main restricted universe multiverse
+# Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+# 预发布软件源，不建议启用
+
+# Types: deb
+# URIs: https://mirrors.tuna.tsinghua.edu.cn/ubuntu
+# Suites: resolute-proposed
+# Components: main restricted universe multiverse
+# Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
+
+# # Types: deb-src
+# # URIs: https://mirrors.tuna.tsinghua.edu.cn/ubuntu
+# # Suites: resolute-proposed
+# # Components: main restricted universe multiverse
+# # Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 ```
 
 apt 更新软件
