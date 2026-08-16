@@ -173,13 +173,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/0-你的第一个 Kubernetes 实验/0-介绍.md",
+                "file": "Linux/装机记录/Ubuntu 24.04.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "0-介绍 的大纲"
+              "title": "大纲"
             }
           },
           {
@@ -193,12 +193,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 392.5,
-    "collapsed": true
+    "width": 392.5
   },
   "left-ribbon": {
     "hiddenItems": {

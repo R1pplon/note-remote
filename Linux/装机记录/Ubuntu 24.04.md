@@ -1,5 +1,9 @@
 VMware workstation
 
+## 系统配置
+
+### ssh
+
 ```bash
 # 安装并启动 ssh 服务
 sudo apt update && sudo apt install openssh-server -y
@@ -14,12 +18,14 @@ ssh user@<IP>
 
 ssh 远程登录是为了复制粘贴功能
 
-换源
+### 换源
 
 ```bash
 sudo mv /etc/apt/sources.list.d/ubuntu.sources /etc/apt/sources.list.d/ubuntu.sources.bak
 sudo nano /etc/apt/sources.list.d/ubuntu.sources
 ```
+
+[Ubuntu | 镜像站使用帮助 | 清华大学开源软件镜像站 | Tsinghua Open Source Mirror](https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/)
 
 在 `/etc/apt/sources.list.d/ubuntu.sources`
 写入 DEB822 格式的清华软件源
@@ -79,7 +85,7 @@ sudo reboot
 ```
 
 
-## 环境配置
+## 软件安装
 
 ### 开发套件
 
@@ -120,7 +126,7 @@ nvm current
 安装pnpm
 `npm install -g pnpm`
 
-### UV
+### uv
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
