@@ -126,5 +126,7 @@ make --version
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-
+# 配置 Shell 自动补全
+uv generate-shell-completion zsh > ~/.config/zsh/completions/_uv
+uvx --generate-shell-completion zsh > ~/.config/zsh/completions/_uvx
 ```
