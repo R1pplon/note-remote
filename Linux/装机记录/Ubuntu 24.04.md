@@ -84,5 +84,27 @@ sudo reboot
 ## nvm
 
 ```bash
+# 安装 NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
+# 刷新环境变量
+source ~/.bashrc
+
+# 验证版本
+nvm --version
+
+# 查看可用的 Node.js 版本
+nvm ls-remote
+
+# 安装最新稳定版
+nvm install --lts
+
+# 切换 Node.js 版本
+nvm use <版本号>
+
+# - 查看当前使用的版本
+nvm current
 ```
+
+安装pnpm
+`npm install -g pnpm`
