@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/装机记录/Ubuntu 24.04.md",
+                "file": "Linux/装机记录/系统优化记录/VMware/Ubuntu 24.04 桌面虚拟机性能优化技术文档.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ubuntu 24.04"
+              "title": "Ubuntu 24.04 桌面虚拟机性能优化技术文档"
             }
           },
           {
@@ -173,7 +173,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Linux/装机记录/Ubuntu 24.04.md",
+                "file": "Linux/装机记录/系统优化记录/VMware/Ubuntu 24.04 桌面虚拟机性能优化技术文档.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -213,11 +213,14 @@
   },
   "active": "3b7ba80858d18d24",
   "lastOpenFiles": [
-    "Linux/系统管理/终端配置.md",
+    "Linux/装机记录/系统优化记录.md",
+    "Linux/装机记录/系统优化记录/VMware/Ubuntu 24.04 桌面虚拟机性能优化技术文档.md",
+    "Linux/装机记录/系统优化记录/VMware",
+    "Linux/装机记录/系统优化记录",
     "Linux/装机记录/Ubuntu 24.04.md",
+    "Linux/系统管理/终端配置.md",
     "DevOps/docker.md",
     "Linux/编程/编译加速.md",
-    "Linux/装机记录/未命名",
     "Linux/装机记录",
     "Linux/编程",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/0-你的第一个 Kubernetes 实验/0-介绍.md",
@@ -243,12 +246,9 @@
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/8-Kubernetes Dashboard 管理/4-访问 Kubernetes Dashboard.md",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/8-Kubernetes Dashboard 管理/1-启动 Kubernetes 集群.md",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/8-Kubernetes Dashboard 管理/2-部署 Kubernetes Dashboard.md",
-    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/8-Kubernetes Dashboard 管理/0-介绍.md",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/8-Kubernetes Dashboard 管理",
-    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/7-部署 Kubernetes Nginx Pod/1-部署 Nginx Pod.md",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/7-部署 Kubernetes Nginx Pod",
     "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/6-Kubernetes 集群架构",
-    "DevOps/K8s/K8s学习资料/kubernetes-for-noobs/5-探索 Kubernetes 集群版本",
     "网络安全/SQL注入/image/sql_union_1.png",
     "网络安全/SQL注入/image/sql_union_2.png",
     "网络安全/SQL注入/image/sql_string_3.png",
