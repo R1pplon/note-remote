@@ -78,3 +78,11 @@ sudo apt install open-vm-tools open-vm-tools-desktop -y
 sudo reboot
 ```
 
+
+## 环境配置
+
+## nvm
+
+```bash
+
+```
