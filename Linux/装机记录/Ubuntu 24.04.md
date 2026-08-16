@@ -108,3 +108,23 @@ nvm current
 
 安装pnpm
 `npm install -g pnpm`
+
+## 开发套件
+
+```bash
+sudo apt install -y build-essential
+
+# 检验版本
+gcc --version
+g++ --version
+make --version
+```
+
+
+## UV
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+
+```
