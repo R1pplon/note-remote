@@ -81,7 +81,18 @@ sudo reboot
 
 ## 环境配置
 
-## nvm
+### 开发套件
+
+```bash
+sudo apt install -y build-essential
+
+# 检验版本
+gcc --version
+g++ --version
+make --version
+```
+
+### nvm
 
 ```bash
 # 安装 NVM
@@ -109,19 +120,7 @@ nvm current
 安装pnpm
 `npm install -g pnpm`
 
-## 开发套件
-
-```bash
-sudo apt install -y build-essential
-
-# 检验版本
-gcc --version
-g++ --version
-make --version
-```
-
-
-## UV
+### UV
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -130,3 +129,4 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 uv generate-shell-completion zsh > ~/.config/zsh/completions/_uv
 uvx --generate-shell-completion zsh > ~/.config/zsh/completions/_uvx
 ```
+
