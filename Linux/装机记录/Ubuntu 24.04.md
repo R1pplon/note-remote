@@ -12,6 +12,8 @@ ip a
 ssh user@<IP>
 ```
 
+ssh 远程登录是为了复制粘贴功能
+
 换源
 
 ```bash
@@ -68,5 +70,11 @@ apt 更新软件
 
 ```bash
 sudo apt update && sudo apt upgrade -y
+
+# 安装 vm-tools
+sudo apt install open-vm-tools open-vm-tools-desktop -y
+
+# 重启以应用
+sudo reboot
 ```
 
