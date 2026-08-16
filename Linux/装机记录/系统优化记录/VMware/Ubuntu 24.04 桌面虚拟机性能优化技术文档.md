@@ -262,11 +262,11 @@ gsettings set org.gnome.desktop.interface enable-animations false
 
 ## 8. 附录：脚本说明
 
-| 文件 | 用途 |
-|---|---|
-| `optimize.sh` | 修复后的完整优化脚本，幂等可重跑、非交互、带校验输出 |
-| `rollback.sh` | 反向回滚脚本 |
-| `c-class.sh` | C 类清理：mask cloud-init 服务（幂等，带校验） |
+| 文件            | 用途                               |
+| ------------- | -------------------------------- |
+| `optimize.sh` | 修复后的完整优化脚本，幂等可重跑、非交互、带校验输出       |
+| `rollback.sh` | 反向回滚脚本                           |
+| `c-class.sh`  | C 类清理：mask cloud-init 服务（幂等，带校验） |
 
 **运行方式**：
 
@@ -282,3 +282,343 @@ sudo bash c-class.sh        # 可选：mask cloud-init 服务
 3. 禁用列表补齐 `anacron.timer`（初版漏掉，导致 timer 仍 enabled）。
 4. 幂等化：重跑不会重复执行、不会误报。
 5. 增加分步骤日志 `[OK]/[SKIP]/[WARN]` 与最终校验汇总。
+
+### optimize.sh
+
+```bash
+#!/usr/bin/env bash
+#
+# Ubuntu 24.04 桌面虚拟机性能优化脚本（修复版）
+# 用法: sudo bash optimize.sh
+#
+# 特性:
+#   - 幂等: 可安全重复运行
+#   - 非交互: DEBIAN_FRONTEND=noninteractive + --force-confold，不会因 conffile 提示卡死
+#   - 修复历史 bug: zram 安装短路、先写配置后装包触发 conffile 提示、anacron.timer 漏禁
+#   - 完整校验输出
+#
+set -uo pipefail
+
+# 允许在非交互环境静默 apt
+export DEBIAN_FRONTEND=noninteractive
+export DEBIAN_PRIORITY=critical
+
+log()  { echo -e "\n\033[1;34m[==>]\033[0m $*"; }
+ok()   { echo -e "\033[1;32m[OK]\033[0m  $*"; }
+warn() { echo -e "\033[1;33m[!!]\033[0m $*"; }
+
+# 需 root
+if [[ $EUID -ne 0 ]]; then
+    echo "请以 root 运行: sudo bash $0" >&2
+    exit 1
+fi
+
+########################################
+# 1. 开机提速：移除 splash
+########################################
+log "1/7 移除 splash，消除 plymouth-quit-wait 超时"
+if grep -q 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"' /etc/default/grub; then
+    sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/' /etc/default/grub
+    update-grub >/dev/null
+    ok "已移除 splash 并 update-grub"
+elif grep -q 'GRUB_CMDLINE_LINUX_DEFAULT="quiet"' /etc/default/grub; then
+    ok "已是 quiet（跳过）"
+else
+    warn "grub 行非预期，请手动检查: $(grep GRUB_CMDLINE_LINUX_DEFAULT /etc/default/grub)"
+fi
+
+########################################
+# 2. 禁用 Docker/containerd 自启（保留软件）
+########################################
+log "2/7 禁用 Docker/containerd 自启"
+for u in docker.service docker.socket containerd.service; do
+    if systemctl is-enabled "$u" >/dev/null 2>&1; then
+        systemctl disable --now "$u" >/dev/null 2>&1 && ok "已禁用 $u" || warn "禁用 $u 失败"
+    else
+        ok "已禁用 $u（跳过）"
+    fi
+done
+
+########################################
+# 3. 禁用虚拟机无用服务
+########################################
+log "3/7 禁用虚拟机无用服务"
+DISABLE_UNITS=(
+    bluetooth.service
+    cups.service cups.socket cups.path cups-browsed.service
+    avahi-daemon.service avahi-daemon.socket
+    kerneloops.service
+    apport.service apport-autoreport.path apport-forward.socket apport-autoreport.timer
+    whoopsie.path whoopsie.service
+    gnome-remote-desktop.service
+    anacron.service anacron.timer
+)
+for u in "${DISABLE_UNITS[@]}"; do
+    if systemctl is-enabled "$u" >/dev/null 2>&1; then
+        systemctl disable --now "$u" >/dev/null 2>&1 && ok "已禁用 $u" || warn "禁用 $u 失败"
+    else
+        ok "已禁用 $u（跳过）"
+    fi
+done
+
+########################################
+# 4. swappiness 60 -> 10
+########################################
+log "4/7 调整 swappiness 与 vfs_cache_pressure"
+cat > /etc/sysctl.d/99-perf.conf <<'EOF'
+vm.swappiness=10
+vm.vfs_cache_pressure=50
+EOF
+sysctl --system >/dev/null 2>&1
+ok "swappiness=$(cat /proc/sys/vm/swappiness), vfs_cache_pressure=$(cat /proc/sys/vm/vfs_cache_pressure)"
+
+########################################
+# 5. zram 压缩交换
+#    修复要点:
+#      - 不再用 `command -v zramctl` 短路判断（zramctl 属 util-linux 自带的坑）
+#      - 先装包，再写配置，最后启服务；配合 force-confold 避免 conffile 交互
+########################################
+log "5/7 配置 zram 压缩交换"
+if dpkg -s zram-tools >/dev/null 2>&1; then
+    ok "zram-tools 已安装（跳过安装）"
+else
+    apt-get update -qq
+    apt-get install -y -qq \
+        -o Dpkg::Options::="--force-confold" \
+        -o Dpkg::Options::="--force-confdef" \
+        zram-tools
+    ok "zram-tools 安装完成"
+fi
+
+cat > /etc/default/zramswap <<'EOF'
+# 使用系统内存的 50% 作为 zram swap
+PERCENT=50
+# zstd 压缩：压缩率高于 lz4，CPU 开销适中
+ALGO=zstd
+# 优先级 100，高于磁盘 swap（-1），内存压力时优先使用 zram
+PRIORITY=100
+EOF
+
+systemctl enable zramswap.service >/dev/null 2>&1
+systemctl restart zramswap.service >/dev/null 2>&1
+ok "zram 配置完成："
+zramctl 2>/dev/null || warn "zram 未生效，请检查 systemctl status zramswap.service"
+
+########################################
+# 6. 移除无用的 snap（无浏览器需求时）
+########################################
+log "6/7 移除 Firefox 及相关 GUI snap"
+SNAP_REMOVE=(firefox snap-store snapd-desktop-integration gnome-42-2204 gtk-common-themes)
+for s in "${SNAP_REMOVE[@]}"; do
+    if snap list "$s" >/dev/null 2>&1; then
+        snap remove --purge "$s" >/dev/null 2>&1 && ok "已移除 snap $s" || warn "移除 snap $s 失败"
+    else
+        ok "snap $s 不存在（跳过）"
+    fi
+done
+# core22 是 firmware-updater 的 base 依赖，默认保留；如不再需要固件更新，取消下行注释
+# snap remove --purge firmware-updater && snap remove --purge core22
+
+########################################
+# 7. journal 限容 + 收尾
+########################################
+log "7/7 journal 限容与清理"
+mkdir -p /etc/systemd/journald.conf.d
+cat > /etc/systemd/journald.conf.d/limit.conf <<'EOF'
+[Journal]
+SystemMaxUse=50M
+SystemKeepFree=1G
+MaxRetentionSec=2week
+EOF
+systemctl restart systemd-journald
+apt-get autoremove --purge -y -qq >/dev/null 2>&1
+apt-get clean >/dev/null 2>&1
+systemctl daemon-reload
+ok "journal 已限容 50M，清理完成"
+
+########################################
+# 校验汇总
+########################################
+log "========== 校验汇总 =========="
+echo "--- 开机时间（历史值，重启后刷新）---"; systemd-analyze 2>/dev/null || true
+echo "--- swappiness ---"; cat /proc/sys/vm/swappiness
+echo "--- zram ---"; zramctl 2>/dev/null || echo "(未生效)"
+echo "--- swap ---"; swapon --show
+echo "--- journal 占用 ---"; journalctl --disk-usage 2>/dev/null || true
+echo "--- 磁盘 ---"; df -h / | tail -1
+echo "--- snap ---"; snap list 2>/dev/null || true
+echo "--- 残留 enabled 服务（应为空）---"
+systemctl list-unit-files --state=enabled --no-pager \
+    | grep -E 'docker|containerd|bluetooth|cups|avahi|kerneloops|apport|whoopsie|gnome-remote-desktop|anacron' \
+    || echo "(无)"
+log "全部完成。建议重启后运行 systemd-analyze 复查开机时间。"
+```
+
+### rollback.sh
+
+```bash
+#!/usr/bin/env bash
+#
+# Ubuntu 24.04 桌面虚拟机性能优化 —— 回滚脚本
+# 用法: sudo bash rollback.sh
+#
+# 将 optimize.sh 的所有改动还原到优化前状态。幂等，可安全重复运行。
+#
+set -uo pipefail
+
+export DEBIAN_FRONTEND=noninteractive
+
+log()  { echo -e "\n\033[1;34m[==>]\033[0m $*"; }
+ok()   { echo -e "\033[1;32m[OK]\033[0m  $*"; }
+warn() { echo -e "\033[1;33m[!!]\033[0m $*"; }
+
+if [[ $EUID -ne 0 ]]; then
+    echo "请以 root 运行: sudo bash $0" >&2
+    exit 1
+fi
+
+########################################
+# 1. 恢复 swappiness
+########################################
+log "1/6 恢复 swappiness"
+if [[ -f /etc/sysctl.d/99-perf.conf ]]; then
+    rm -f /etc/sysctl.d/99-perf.conf
+    sysctl --system >/dev/null 2>&1
+    ok "已删除 99-perf.conf，swappiness=$(cat /proc/sys/vm/swappiness)"
+else
+    ok "无 99-perf.conf（跳过）"
+fi
+
+########################################
+# 2. 恢复自启服务
+########################################
+log "2/6 恢复自启服务"
+ENABLE_UNITS=(
+    docker.service docker.socket containerd.service
+    bluetooth.service
+    cups.service cups.socket cups.path cups-browsed.service
+    avahi-daemon.service avahi-daemon.socket
+    kerneloops.service
+    apport.service apport-autoreport.path apport-forward.socket apport-autoreport.timer
+    whoopsie.path whoopsie.service
+    gnome-remote-desktop.service
+    anacron.service anacron.timer
+)
+for u in "${ENABLE_UNITS[@]}"; do
+    if systemctl list-unit-files "$u" >/dev/null 2>&1; then
+        systemctl enable "$u" >/dev/null 2>&1 && ok "已启用 $u" || warn "启用 $u 失败"
+    else
+        ok "$u 不存在（跳过）"
+    fi
+done
+# 注: 只 enable 不 start，避免立即拉起；如需立即运行可另执行 systemctl start
+
+########################################
+# 3. 移除 zram
+########################################
+log "3/6 移除 zram"
+if systemctl list-unit-files zramswap.service >/dev/null 2>&1; then
+    systemctl disable --now zramswap.service >/dev/null 2>&1 && ok "已禁用 zramswap.service"
+fi
+if dpkg -s zram-tools >/dev/null 2>&1; then
+    apt-get purge -y -qq zram-tools >/dev/null 2>&1 && ok "已卸载 zram-tools" || warn "卸载 zram-tools 失败"
+else
+    ok "zram-tools 未安装（跳过）"
+fi
+modprobe -r zram 2>/dev/null || true
+
+########################################
+# 4. 恢复 grub splash（可选，默认恢复）
+########################################
+log "4/6 恢复 grub splash"
+if grep -q 'GRUB_CMDLINE_LINUX_DEFAULT="quiet"' /etc/default/grub && \
+   ! grep -q 'GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"' /etc/default/grub; then
+    sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/' /etc/default/grub
+    update-grub >/dev/null
+    ok "已恢复 splash 并 update-grub"
+else
+    ok "grub 无需改动（跳过）"
+fi
+
+########################################
+# 5. 恢复 journal 上限
+########################################
+log "5/6 恢复 journal 默认"
+if [[ -f /etc/systemd/journald.conf.d/limit.conf ]]; then
+    rm -f /etc/systemd/journald.conf.d/limit.conf
+    systemctl restart systemd-journald
+    ok "已删除 limit.conf 并重启 journald"
+else
+    ok "无 limit.conf（跳过）"
+fi
+
+########################################
+# 6. 重装 Firefox（可选，需联网）
+########################################
+log "6/6 重装 Firefox snap（如不需要可跳过）"
+if ! snap list firefox >/dev/null 2>&1; then
+    if snap install firefox >/dev/null 2>&1; then
+        ok "已重装 firefox"
+    else
+        warn "重装 firefox 失败（可能离线，可手动 snap install firefox）"
+    fi
+else
+    ok "firefox 已存在（跳过）"
+fi
+
+log "========== 回滚完成 =========="
+echo "--- swappiness ---"; cat /proc/sys/vm/swappiness
+echo "--- swap ---"; swapon --show
+echo "--- zram ---"; zramctl 2>/dev/null || echo "(无 zram)"
+echo "--- enabled 服务 ---"
+systemctl list-unit-files --state=enabled --no-pager \
+    | grep -E 'docker|containerd|bluetooth|cups|avahi|kerneloops|apport|whoopsie|gnome-remote-desktop|anacron' \
+    || echo "(无)"
+echo "--- snap ---"; snap list 2>/dev/null || true
+log "如需完全还原，请重启使 grub 与自启服务生效。"
+```
+
+### c-class.sh
+
+```bash
+#!/usr/bin/env bash
+#
+# C 类优化：cloud-init 服务 mask（清理启动噪音）
+# 用法: sudo bash c-class.sh
+#
+# 说明:
+#   /etc/cloud/cloud-init.disabled 已由 Ubuntu 安装器创建，cloud-init 实际已禁用，
+#   4 个服务 + hotplugd socket 每次开机只是空转一次。此脚本将其 mask，杜绝误启动。
+#   幂等，可重复运行。
+#
+set -uo pipefail
+
+UNITS=(
+    cloud-init.service
+    cloud-init-local.service
+    cloud-config.service
+    cloud-final.service
+    cloud-init-hotplugd.service
+    cloud-init-hotplugd.socket
+)
+
+if [[ $EUID -ne 0 ]]; then
+    echo "请以 root 运行: sudo bash $0" >&2
+    exit 1
+fi
+
+for u in "${UNITS[@]}"; do
+    systemctl disable --now "$u" >/dev/null 2>&1
+    # mask 前先移除可能存在的普通文件覆盖（如安装器生成的 /etc/systemd/system/cloud-init.service）
+    # 否则 systemctl mask 无法在其上创建 /dev/null 符号链接而静默失败
+    if [[ -e "/etc/systemd/system/$u" && ! -L "/etc/systemd/system/$u" ]]; then
+        rm -f "/etc/systemd/system/$u"
+    fi
+    systemctl mask "$u" >/dev/null 2>&1
+    echo "[OK] $u -> $(systemctl is-enabled "$u" 2>/dev/null)"
+done
+
+echo
+echo "--- 校验（应全部为 masked）---"
+systemctl list-unit-files --all --no-pager 2>/dev/null | grep -iE 'cloud-(init|config|final)' || true
+```
