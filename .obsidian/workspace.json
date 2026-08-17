@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linux/装机记录/系统优化记录/VMware/Ubuntu 24.04 桌面虚拟机性能优化技术文档.md",
+                "file": "Linux/Android/Waydroid 安装使用手册.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ubuntu 24.04 桌面虚拟机性能优化技术文档"
+              "title": "Waydroid 安装使用手册"
             }
           },
           {
@@ -173,7 +173,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Linux/装机记录/系统优化记录/VMware/Ubuntu 24.04 桌面虚拟机性能优化技术文档.md",
+                "file": "Linux/Android/Waydroid 安装使用手册.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -213,8 +213,8 @@
   },
   "active": "3b7ba80858d18d24",
   "lastOpenFiles": [
-    "Linux/装机记录/系统优化记录.md",
     "Linux/装机记录/系统优化记录/VMware/Ubuntu 24.04 桌面虚拟机性能优化技术文档.md",
+    "Linux/装机记录/系统优化记录.md",
     "Linux/装机记录/系统优化记录/VMware",
     "Linux/装机记录/系统优化记录",
     "Linux/装机记录/Ubuntu 24.04.md",
